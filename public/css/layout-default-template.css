@@ -1,0 +1,97 @@
+.container {
+  width: 80%;
+  margin: 10px auto;
+  background: #fff;
+  padding: 20px 20px 100px;
+}
+.container .page-path {
+  margin-bottom: 16px;
+  display: flex;
+  grid-column-gap: 10px;
+  align-items: center;
+}
+.container .page-path i {
+  color: #3c3f41;
+  font-size: 10px;
+}
+.container .page-path a {
+  color: #1890ff;
+}
+.container .page-path a:hover {
+  text-decoration: underline;
+}
+.nav {
+  color: white;
+}
+.nav a {
+  color: white;
+}
+.nav .top-nav {
+  background: #40a9ff;
+  display: flex;
+  align-items: center;
+  padding: 16px 10%;
+}
+.nav .top-nav .web-logo {
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+}
+.nav .top-nav .web-name {
+  cursor: pointer;
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  margin-left: 20px;
+}
+.nav .bottom-nav {
+  padding: 0 10.7%;
+  display: flex;
+  background: white;
+  border-bottom: 1px solid #dfdfdf;
+}
+.nav .bottom-nav .nav-link {
+  color: #003a8c;
+  font-size: 12px;
+  padding: 10px;
+}
+.nav .bottom-nav .nav-link:hover {
+  text-decoration: underline;
+}
+.footer {
+  background: #26272b;
+  color: white;
+  padding: 32px 10%;
+}
+.footer .content {
+  display: grid;
+  grid-template-columns: 50% 25% 25%;
+}
+.footer .content .item-block .headline {
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+.footer .content .item-block .info {
+  color: #6c6e71;
+  display: flex;
+  flex-direction: column;
+  line-height: 24px;
+}
+.footer .content .item-block .info a {
+  color: #6c6e71;
+  transition: 0.3s;
+}
+.footer .content .item-block .info a:hover {
+  color: white;
+  text-decoration: underline;
+}
+.footer .content .about {
+  width: 95%;
+}
+.footer .bottom-footer hr {
+  border-top: 1px solid #6c6e71;
+  margin: 24px 0px;
+}
+.footer .bottom-footer .info {
+  color: #6c6e71;
+}

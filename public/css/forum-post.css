@@ -1,0 +1,168 @@
+.post .top-headline {
+  margin-bottom: 16px;
+}
+.post .top-headline .headline {
+  margin-bottom: 8px;
+  font-size: 30px;
+  color: #096dd9;
+}
+.post .top-headline .info-action {
+  display: flex;
+  justify-content: space-between;
+}
+.post .top-headline .info-action .author {
+  display: flex;
+  grid-column-gap: 10px;
+  align-items: center;
+}
+.post .top-headline .info-action .author a {
+  color: #9e938f;
+}
+.post .top-headline .info-action .author a:hover {
+  text-decoration: underline;
+}
+.post .top-headline .info-action .author i {
+  color: #9e938f;
+  font-size: 12px;
+}
+.post .top-headline .info-action .action {
+  display: flex;
+}
+.post .top-headline .info-action .action button {
+  background: #1890ff;
+  padding: 7px;
+  transition: 0.3s;
+  min-width: 50px;
+  color: white;
+  border: 1px solid #ccc;
+}
+.post .top-headline .info-action .action button:hover {
+  background: #096dd9;
+}
+.post .content .topic-list {
+  display: flex;
+  flex-direction: column;
+  grid-row-gap: 8px;
+  align-items: stretch;
+}
+.post .content .topic-list .topic-item {
+  display: grid;
+  grid-template-columns: 13% 87%;
+  border: 1px solid #cbcbcb;
+  border-radius: 5px;
+}
+.post .content .topic-list .topic-item .user-block {
+  background: #e2e3e5;
+  padding: 16px 8px;
+  position: relative;
+}
+.post .content .topic-list .topic-item .user-block .triangle {
+  position: absolute;
+  right: 0;
+  top: 10%;
+}
+.post .content .topic-list .topic-item .user-block .user-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0px auto;
+  display: block;
+}
+.post .content .topic-list .topic-item .user-block .user-name {
+  color: #1890ff;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  font-size: 17px;
+  margin: 8px auto;
+}
+.post .content .topic-list .topic-item .user-block .user-name:hover {
+  text-decoration: underline;
+}
+.post .content .topic-list .topic-item .user-block .user-rank {
+  padding: 5px;
+  background: #1890ff;
+  color: white;
+  border-radius: 5px;
+  font-size: 12px;
+  text-align: center;
+}
+.post .content .topic-list .topic-item .topic-content-block {
+  padding: 16px;
+  background: white;
+}
+.post .content .topic-list .topic-item .topic-content-block .topic-nav {
+  display: flex;
+  justify-content: space-between;
+}
+.post .content .topic-list .topic-item .topic-content-block .topic-nav .topic-time-up {
+  color: #8c8c8c;
+  cursor: pointer;
+}
+.post .content .topic-list .topic-item .topic-content-block .topic-nav .topic-time-up:hover {
+  text-decoration: underline;
+}
+.post .content .topic-list .topic-item .topic-content-block .topic-nav .action {
+  display: flex;
+  grid-column-gap: 10px;
+}
+.post .content .topic-list .topic-item .topic-content-block .topic-nav .action i {
+  color: #69c0ff;
+  cursor: pointer;
+}
+.post .content .topic-list .topic-item .topic-content-block .topic-nav .action i:hover {
+  color: #40a9ff;
+}
+.post .content .topic-list .topic-item .topic-content-block .hr {
+  border-top: 1px solid #ccc;
+  margin: 16px 0;
+}
+.post .content .topic-list .topic-item .topic-content-block .main-content {
+  height: 300px;
+}
+.post .content .topic-list .topic-item .topic-content-block .topic-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.post .content .topic-list .topic-item .topic-content-block .topic-footer a {
+  color: #40a9ff;
+}
+.post .content .topic-list .topic-item .topic-content-block .topic-footer a:hover {
+  text-decoration: underline;
+}
+.post .content .topic-list .topic-item .topic-content-block .topic-footer i {
+  color: #40a9ff;
+  font-size: 12px;
+  margin-right: -5px;
+}
+.post .content .topic-list .topic-item .topic-content-block .topic-footer .right {
+  display: flex;
+  align-items: center;
+  grid-column-gap: 10px;
+}
+.post .content .topic-list .user-comment {
+  margin-top: 40px;
+}
+.post .content .topic-list .user-comment .tutorial {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+.post .content .topic-list .user-comment .comment-btn {
+  background: #1890ff;
+  color: white;
+  padding: 10px;
+  margin-left: auto;
+  margin-top: 16px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.post .content .topic-list .user-comment .comment-btn:hover {
+  background: #096dd9;
+}
+.post .content .topic-list .user-comment .comment-btn i {
+  color: white;
+  font-size: 16px;
+  padding-right: 10px;
+}

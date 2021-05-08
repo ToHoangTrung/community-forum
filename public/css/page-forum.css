@@ -1,0 +1,95 @@
+.forum .content {
+  display: grid;
+  grid-template-columns: 69% 30%;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.forum .content .main-list {
+  display: flex;
+  flex-direction: column;
+  grid-row-gap: 16px;
+}
+.forum .content .main-list .introduce {
+  display: grid;
+  color: #fff;
+  padding: 10px;
+  grid-template-columns: 40% 12% 12% 36%;
+  background: #40a9ff;
+}
+.forum .content .main-list .list .item {
+  display: grid;
+  grid-template-columns: 5% 35% 12% 12% 36%;
+  align-items: center;
+  border: 1px solid #e4e4e4;
+  padding: 10px;
+  transition: 0.3s;
+}
+.forum .content .main-list .list .item:hover {
+  background: #e7e4e4;
+}
+.forum .content .main-list .list .item .item-logo {
+  color: #096dd9;
+  font-size: 30px;
+}
+.forum .content .main-list .list .item .headline {
+  font-size: 20px;
+  color: #1890ff;
+  font-weight: bold;
+}
+.forum .content .main-list .list .item .headline a {
+  font-size: 20px;
+  transition: 0.3s;
+  color: #1890ff;
+}
+.forum .content .main-list .list .item .headline a:hover {
+  text-decoration: underline;
+}
+.forum .content .main-list .list .item .newest-post {
+  display: grid;
+  grid-template-columns: 18% 80%;
+  align-items: center;
+  justify-content: space-between;
+}
+.forum .content .main-list .list .item .newest-post .avatar {
+  width: 40px;
+  height: 40px;
+}
+.forum .content .main-list .list .item .newest-post .avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.forum .content .main-list .list .item .newest-post .info {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-row-gap: 3px;
+}
+.forum .content .main-list .list .item .newest-post .info .name {
+  cursor: pointer;
+  color: #1890ff;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.forum .content .main-list .list .item .newest-post .info .name:hover {
+  text-decoration: underline;
+}
+.forum .content .main-list .list .item .newest-post .info .time {
+  color: #8c8c8c;
+}
+.forum .content .main-list .list .item .newest-post .info .author {
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.forum .content .main-list .list .item .newest-post .info .author a {
+  color: #1890ff;
+}
+.forum .content .main-list .list .item .newest-post .info .author a:hover {
+  text-decoration: underline;
+}
+.forum .content .bonus-info-list {
+  border: 1px solid black;
+}

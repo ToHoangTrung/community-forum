@@ -1,0 +1,97 @@
+.members .top-headline {
+  margin-bottom: 16px;
+}
+.members .top-headline p {
+  font-size: 30px;
+  color: #096dd9;
+}
+.members .content {
+  display: grid;
+  grid-template-columns: 30% 69%;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.members .content .bonus-info-list {
+  border: 1px solid black;
+}
+.members .content .main-list .introduce {
+  display: grid;
+  color: #fff;
+  padding: 10px;
+  grid-template-columns: 40% 12% 12% 36%;
+  background: #40a9ff;
+}
+.members .content .main-list .introduce .filter-block {
+  display: flex;
+  justify-content: space-between;
+}
+.members .content .main-list .introduce .filter-block a {
+  color: white;
+}
+.members .content .main-list .introduce .filter-block a i {
+  margin-left: 10px;
+}
+.members .content .main-list .list .item {
+  display: grid;
+  grid-template-columns: 5% 35% 12% 12% 36%;
+  align-items: center;
+  border: 1px solid #e4e4e4;
+  padding: 10px;
+  transition: 0.3s;
+}
+.members .content .main-list .list .item:hover {
+  background: #e7e4e4;
+}
+.members .content .main-list .list .item .avatar {
+  width: 40px;
+  height: 40px;
+}
+.members .content .main-list .list .item .avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.members .content .main-list .list .item .headline {
+  color: #1890ff;
+  font-weight: bold;
+  margin-left: 10px;
+}
+.members .content .main-list .list .item .headline a {
+  font-size: 20px;
+  transition: 0.3s;
+  color: #1890ff;
+}
+.members .content .main-list .list .item .headline a:hover {
+  text-decoration: underline;
+}
+.members .content .main-list .list .item .newest-post {
+  display: flex;
+  flex-direction: column;
+}
+.members .content .main-list .list .item .newest-post .name {
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #1890ff;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+.members .content .main-list .list .item .newest-post .name:hover {
+  text-decoration: underline;
+}
+.members .content .main-list .list .item .newest-post .time {
+  color: #8c8c8c;
+}
+.members .content .main-list .list .item .newest-post .author {
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.members .content .main-list .list .item .newest-post .author a {
+  color: #1890ff;
+}
+.members .content .main-list .list .item .newest-post .author a:hover {
+  text-decoration: underline;
+}

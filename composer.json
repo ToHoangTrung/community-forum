@@ -1,0 +1,23 @@
+{
+  "name": "udpt/community-forum-web",
+  "authors": [
+    {
+      "name": "UDPT",
+      "email": "hoangtrung14121412@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "app\\": "."
+    }
+  },
+  "require": {
+    "vlucas/phpdotenv": "^5.0",
+    "ext-mysqli": "*",
+    "ext-pdo": "*",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "panique/php-sass": "1.0"
+  }
+}

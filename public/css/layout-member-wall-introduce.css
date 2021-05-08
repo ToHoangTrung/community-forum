@@ -1,0 +1,104 @@
+.member-wall-introduce {
+  margin: 10px auto;
+  width: 80%;
+  background: white;
+}
+.member-wall-introduce .member-introduce {
+  border: 1px solid #ccc;
+  position: relative;
+}
+.member-wall-introduce .member-introduce a, .member-wall-introduce .member-introduce p {
+  color: black;
+  font-size: 16px;
+}
+.member-wall-introduce .member-introduce .member-logo {
+  width: 200px;
+  height: 200px;
+  top: 14px;
+  left: 14px;
+  position: absolute;
+  padding: 8px;
+  border: 1px solid #1890ff;
+}
+.member-wall-introduce .member-introduce .member-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: auto;
+}
+.member-wall-introduce .member-introduce .basic-info {
+  display: flex;
+  flex-direction: column;
+  grid-row-gap: 10px;
+  padding: 10px 10px 10px 20%;
+  background: #e6f7ff;
+}
+.member-wall-introduce .member-introduce .basic-info .member-name {
+  font-size: 20px;
+  color: #096dd9;
+  font-weight: bold;
+}
+.member-wall-introduce .member-introduce .basic-info .member-name:hover {
+  text-decoration: underline;
+}
+.member-wall-introduce .member-introduce .basic-info .member-rank {
+  color: white;
+  background: #4972e7;
+  border-radius: 5px;
+  min-width: 10%;
+  max-width: 200px;
+  text-align: center;
+  padding: 5px;
+}
+.member-wall-introduce .member-introduce .basic-info .member-rank:hover {
+  filter: brightness(90%);
+}
+.member-wall-introduce .member-introduce .basic-info .other-info {
+  color: #8c8c8c;
+}
+.member-wall-introduce .member-introduce .basic-info .other-info span {
+  color: black;
+}
+.member-wall-introduce .member-introduce .member-post-info {
+  display: flex;
+  justify-content: space-between;
+  grid-row-gap: 10px;
+  padding: 10px 10px 10px 20%;
+  background: white;
+}
+.member-wall-introduce .member-introduce .member-post-info .info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-row-gap: 10px;
+}
+.member-wall-introduce .member-introduce .member-post-info .info-item .label {
+  color: #8c8c8c;
+}
+.member-wall-introduce .member-introduce .member-contact {
+  padding: 10px 10px 10px 20%;
+  background: white;
+  display: flex;
+}
+.member-wall-introduce .member-introduce .member-contact .contact-item {
+  transition: 0.3s;
+  font-size: 14px;
+  padding: 7px;
+  color: #40a9ff;
+  border: 1px solid #d8d8d8;
+}
+.member-wall-introduce .member-introduce .member-contact .contact-item:hover {
+  background: #e6f7ff;
+}
+.member-wall-introduce .member-nav {
+  display: flex;
+  background: #096dd9;
+}
+.member-wall-introduce .member-nav .nav-link {
+  color: #91d5ff;
+  padding: 10px;
+}
+.member-wall-introduce .member-nav .nav-link:hover {
+  background: #0050b3;
+  color: white;
+}

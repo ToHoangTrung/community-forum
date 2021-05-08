@@ -1,0 +1,105 @@
+@import "theme";
+
+.members{
+  .top-headline{
+    margin-bottom: 16px;
+    p{
+      font-size: 30px;
+      color: $blue-7;
+    }
+  }
+  .content{
+    display: grid;
+    grid-template-columns: 30% 69%;
+    justify-content: space-between;
+    align-items: stretch;
+    .bonus-info-list{
+      border: 1px solid black;
+    }
+    .main-list{
+      .introduce{
+        display: grid;
+        color: #FFFFFF;
+        padding: 10px;
+        grid-template-columns: 40% 12% 12% 36%;
+        background: $blue-5;
+        .filter-block{
+          display: flex;
+          justify-content: space-between;
+          a{
+            color: white;
+            i{
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+      .list{
+        .item{
+          display: grid;
+          grid-template-columns: 5% 35% 12% 12% 36%;
+          align-items: center;
+          border: 1px solid #E4E4E4;
+          padding: 10px;
+          transition: 0.3s;
+          &:hover{
+            background: #e7e4e4;
+          }
+          .avatar{
+            width: 40px;
+            height: 40px;
+            img{
+              width: 100%;
+              height: 100%;
+              border-radius: 50%;
+            }
+          }
+          .headline{
+            color: $blue-6;
+            font-weight: bold;
+            margin-left: 10px;
+            a{
+              font-size: 20px;
+              transition: 0.3s;
+              color: $blue-6;
+              &:hover{
+                text-decoration: underline;
+              }
+            }
+          }
+          .newest-post{
+            display: flex;
+            flex-direction: column;
+            .name{
+              font-weight: bold;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              color: $blue-6;
+              cursor: pointer;
+              &:hover{
+                text-decoration: underline;
+              }
+              margin-bottom: 5px;
+            }
+            .time{
+              color: #8C8C8C;
+            }
+            .author{
+              cursor: pointer;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              a{
+                color: $blue-6;
+                &:hover{
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

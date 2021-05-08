@@ -1,0 +1,178 @@
+@import "theme";
+
+.post{
+  .top-headline{
+    margin-bottom: 16px;
+    .headline{
+      margin-bottom: 8px;
+      font-size: 30px;
+      color: $blue-7;
+    }
+    .info-action{
+      display: flex;
+      justify-content: space-between;
+      .author{
+        display: flex;
+        grid-column-gap: 10px;
+        align-items: center;
+        a{
+          color: #9E938F;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+        i{
+          color: #9E938F;
+          font-size: 12px;
+        }
+      }
+      .action{
+        display: flex;
+        button{
+          background: $blue-6;
+          padding: 7px;
+          transition: 0.3s;
+          min-width: 50px;
+          color: white;
+          border: 1px solid #CCCCCC;
+          &:hover{
+            background: $blue-7;
+          }
+        }
+      }
+    }
+
+  }
+  .content{
+    .topic-list{
+      display: flex;
+      flex-direction: column;
+      grid-row-gap: 8px;
+      align-items: stretch;
+      .topic-item{
+        display: grid;
+        grid-template-columns: 13% 87%;
+        border: 1px solid #CBCBCB;
+        border-radius: 5px;
+        .user-block{
+          background: #E2E3E5;
+          padding: 16px 8px;
+          position: relative;
+          .triangle{
+            position: absolute;
+            right: 0;
+            top: 10%;
+          }
+          .user-image{
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0px auto;
+            display: block;
+          }
+          .user-name{
+            color: $blue-6;
+            font-weight: bold;
+            display: block;
+            text-align: center;
+            font-size: 17px;
+            margin: 8px auto;
+            &:hover{
+              text-decoration: underline;
+            }
+          }
+          .user-rank{
+            padding: 5px;
+            background: $blue-6;
+            color: white;
+            border-radius: 5px;
+            font-size: 12px;
+            text-align: center;
+          }
+        }
+        .topic-content-block{
+          padding: 16px;
+          background: white;
+          .topic-nav{
+            display: flex;
+            justify-content: space-between;
+            .topic-time-up{
+              color: #8C8C8C;
+              cursor: pointer;
+              &:hover{
+                text-decoration: underline;
+              }
+            }
+            .action{
+              display: flex;
+              grid-column-gap: 10px;
+              i{
+                color: $blue-4;
+                cursor: pointer;
+                &:hover{
+                  color: $blue-5;
+                }
+              }
+            }
+          }
+          .hr{
+            border-top: 1px solid #CCCCCC;
+            margin: 16px 0;
+          }
+          .main-content{
+            height: 300px;
+          }
+          .topic-footer{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            a{
+              color: $blue-5;
+              &:hover{
+                text-decoration: underline;
+              }
+            }
+            i{
+              color:$blue-5;
+              font-size: 12px;
+              margin-right: -5px;
+            }
+            .left{
+
+            }
+            .right{
+              display: flex;
+              align-items: center;
+              grid-column-gap: 10px;
+            }
+          }
+        }
+      }
+      .user-comment{
+        margin-top: 40px;
+        .tutorial{
+          font-size: 20px;
+          margin-bottom: 16px;
+        }
+        .comment-btn{
+          background: $blue-6;
+          color: white;
+          padding: 10px;
+          margin-left: auto;
+          margin-top: 16px;
+          border-radius: 5px;
+          font-size: 16px;
+          font-weight: bold;
+          &:hover{
+            background: $blue-7;
+          }
+          i{
+            color: white;
+            font-size: 16px;
+            padding-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}
