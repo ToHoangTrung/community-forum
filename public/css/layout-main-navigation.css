@@ -26,7 +26,10 @@
   font-size: 16px;
   width: 20px;
 }
-.main-navigation .service-block .arrow-up {
+.main-navigation .service-block .main-dropdown {
+  position: relative;
+}
+.main-navigation .service-block .main-dropdown .arrow-up {
   position: absolute;
   display: none;
   bottom: 0;
@@ -118,8 +121,8 @@
 .main-navigation .user-block .sign-in-block .user-display .user-logo:hover {
   background: #0050b3;
 }
-.main-navigation .user-block .sign-in-block .user-display .arrow-up {
-  left: 28%;
+.main-navigation .user-block .sign-in-block .user-display .user-logo .arrow-up {
+  left: 45%;
 }
 .main-navigation .user-block .sign-in-block .user-service {
   height: 100%;
@@ -133,7 +136,11 @@
 }
 .main-navigation .user-block .sign-in-block .user-service .user-service-item .user-link {
   padding: 0 10px;
+  cursor: pointer;
   background: #096dd9;
+}
+.main-navigation .user-block .sign-in-block .user-service .user-service-item .user-link i {
+  text-align: center;
 }
 .main-navigation .user-block .sign-in-block .user-service .user-service-item .user-link:hover {
   background: #0050b3;
@@ -146,10 +153,10 @@
   border-left: 1px solid #003a8c;
 }
 .main-navigation .user-block .sign-in-block .user-service .user-service-item:first-child .arrow-up {
-  left: 67%;
+  left: 33%;
 }
 .main-navigation .user-block .sign-in-block .user-service .user-service-item:nth-child(2) .arrow-up {
-  left: 87%;
+  left: 33%;
 }
 .main-navigation .user-block .sign-in-block .user-service .user-service-item .dropdown-mail-service .dropdown-header p {
   font-size: 14px;
@@ -351,9 +358,11 @@
 }
 .main-navigation .search-block .search-service .search-link {
   background: #096dd9;
-  padding: 0 15px;
+  padding: 0 10px;
   font-weight: normal;
   font-size: 14px;
+  cursor: pointer;
+  justify-content: center;
   margin-left: 10px;
 }
 .main-navigation .search-block .search-service .search-link:hover {
@@ -361,9 +370,6 @@
 }
 .main-navigation .search-block .search-service .search-link:hover i {
   color: white;
-}
-.main-navigation .search-block .search-service .arrow-up {
-  left: 47%;
 }
 .main-navigation .search-block .search-service .dropdown-search-service {
   width: 350px;
