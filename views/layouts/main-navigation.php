@@ -19,6 +19,8 @@
             $(mainBlock).not(this).children('.arrow-up').hide();
             $(this).next('.dropdown-service').slideToggle();
             $(this).children('.arrow-up').toggle();
+            // $(this).css('background','#0050b3');
+            // $(mainBlock).not(this).css('background','#096dd9');
         });
     }
 </script>

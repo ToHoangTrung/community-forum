@@ -28,6 +28,7 @@
     }
     .main-dropdown{
       position: relative;
+      cursor: pointer;
       .arrow-up {
         position: absolute;
         display: none;
@@ -115,7 +116,7 @@
             color: white;
             font-weight: bold;
             font-size: 16px;
-            padding: 5px 7px;
+            padding: 5px 9px;
             background: $blue-5;
             border-radius: 5px;
           }
@@ -123,7 +124,7 @@
             background: $blue-8;
           }
           .arrow-up{
-            left: 48%;
+            left: 47%;
           }
         }
       }
@@ -153,12 +154,12 @@
             border-right: 1px solid $blue-9;
             border-left: 1px solid $blue-9;
             .arrow-up{
-              left: 33%;
+              left: 32%;
             }
           }
           &:nth-child(2){
             .arrow-up{
-              left: 33%;
+              left: 32%;
             }
           }
           .dropdown-mail-service{
@@ -394,11 +395,15 @@
         font-size: 14px;
         cursor: pointer;
         justify-content: center;
+        position: relative;
         &:hover {
           background: $blue-8;
           i {
             color: white;
           }
+        }
+        .arrow-up{
+          left: 41%;
         }
         margin-left: 10px;
       }
