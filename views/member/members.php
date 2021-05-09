@@ -28,7 +28,7 @@
                         <img src="https://danbooru.donmai.us/data/original/f5/07/f50790fdf8324e9a5dbe555c4d52b070.png"/>
                     </div>
                     <div class="headline">
-                        <a href="/members/profile/">PixelGoose</a>
+                        <a href="/members/profile">PixelGoose</a>
                     </div>
                     <p>4,8K</p>
                     <p>70,2K</p>

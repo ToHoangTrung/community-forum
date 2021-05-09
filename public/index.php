@@ -42,7 +42,7 @@ $app->router->get('/forum/posts', [PostController::class, 'forumPosts']);
 //Return post list of one specific catalog
 $app->router->get('/forum/posts/catalog', [PostController::class, 'getPostsByCatalog']);
 //Return post list of one specific tag
-$app->router->get('/forum/forum/tag/', [PostController::class, 'getPostsByTag']);
+$app->router->get('/forum/posts/tag/', [PostController::class, 'getPostsByTag']);
 //Return 1 post content base on its id
 $app->router->get('/forum/posts/info', [PostController::class, 'getPostById']);
 
@@ -55,7 +55,7 @@ $app->router->get('/user/setting', [UserController::class, 'setting']);
 //Return members page. display member list here
 $app->router->get('/members', [MemberController::class, 'members']);
 //Return 1 member profile base on its id, show the profile and members navigation to go to other member page
-$app->router->get('/members/profile/', [MemberController::class, 'getMemberById']);
+$app->router->get('/members/profile', [MemberController::class, 'getMemberById']);
 
 //Return admin dashboard page
 $app->router->get('/admin/dashboard', [UserController::class, 'admin']);
