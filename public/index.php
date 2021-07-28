@@ -45,6 +45,7 @@ $app->router->get('/forum/posts/catalog', [PostController::class, 'getPostsByCat
 $app->router->get('/forum/posts/tag/', [PostController::class, 'getPostsByTag']);
 //Return 1 post content base on its id
 $app->router->get('/forum/posts/info', [PostController::class, 'getPostById']);
+$app->router->post('/forum/posts/info', [PostController::class, 'addNewCommentForPost']);
 
 //Return user's new post page, show form to save the user's post
 $app->router->get('/user/posts/new', [UserController::class, 'newPost']);
@@ -63,5 +64,6 @@ $app->router->get('/admin/dashboard', [UserController::class, 'admin']);
 //Return admin user management page
 $app->router->get('/admin/dashboard/users', [UserController::class, 'adminUsers']);
 
+//$app->router->post('/forum/posts/viewPost', [PostController::class, 'viewPost']);
 
 $app->run();
