@@ -5,3 +5,6 @@
   font-size: 30px;
   color: #096dd9;
 }
+.admin-dashboard .content {
+  border: 1px solid red;
+}

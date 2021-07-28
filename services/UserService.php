@@ -44,4 +44,50 @@ class UserService
         $stmt->setFetchMode(\PDO::FETCH_ASSOC);
         return $stmt->fetch();
     }
+
+    public function getAll()
+    {
+        $stmt = Application::$app->db->prepare("select * from user where id >= :id");
+        $stmt->execute(['id' => 1]);
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+        return $stmt->fetchAll();
+    }
+
+    public function getUserById($userId)
+    {
+        $stmt = Application::$app->db->prepare("select * from user where user.id = :id");
+        $stmt->execute(['id' => $userId]);
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+        $users = $stmt->fetchAll();
+
+        $postService = new PostService();
+        $permissionService = new PermissionService();
+
+        foreach ($users as &$user){
+            $user['birthday'] = FunctionalService::formatDisplayDatetime($user['birthday']);
+            $user['posts'] = $postService->getByUserId($user['id']);
+            $user['permissions'] = $permissionService->getByUserId($user['id']);
+        }
+        return $users[0];
+    }
+
+    public function addUserPermission($userId, $permissionId)
+    {
+        $permissionService = new PermissionService();
+        $permissions = $permissionService->getByUserIdAndPermissionId($userId, $permissionId);
+        if (sizeof($permissions) == 0) {
+            $stmt = Application::$app->db->prepare("insert into user_permission(user_id, permission_id) values (?, ?)");
+            $stmt->execute([$userId, $permissionId]);
+        }
+    }
+
+    public function deleteUserPermission($userId, $permissionId)
+    {
+        $permissionService = new PermissionService();
+        $permissions = $permissionService->getByUserIdAndPermissionId($userId, $permissionId);
+        if (sizeof($permissions) >= 1) {
+            $stmt = Application::$app->db->prepare("delete from user_permission where user_id = :userId and permission_id = :permissionId");
+            $stmt->execute(['userId' => $userId, 'permissionId' => $permissionId]);
+        }
+    }
 }

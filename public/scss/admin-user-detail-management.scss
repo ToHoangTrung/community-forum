@@ -1,0 +1,172 @@
+@import "theme";
+
+.admin-user-detail{
+  .top-headline{
+    margin-bottom: 16px;
+    p{
+      font-size: 30px;
+      color: $blue-7;
+    }
+  }
+  .content{
+    .detail-nav{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      .left {
+        display: flex;
+        grid-column-gap: 16px;
+        align-items: center;
+      }
+      .right {
+        display: flex;
+        grid-column-gap: 16px;
+        align-items: center;
+        .custom-select {
+          position: relative;
+          display: flex;
+          width: 300px;
+          height: 40px;
+          line-height: 3;
+          background: white;
+          overflow: hidden;
+          border-radius: 5px;
+          select {
+            font-size: 16px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            outline: 0;
+            box-shadow: none;
+            border: 0 !important;
+            background-color: $blue-5;
+            background-image: none;
+            flex: 1;
+            padding: 0 .5em;
+            color: #fff;
+            cursor: pointer;
+          }
+          &::after {
+            display: flex;
+            align-items: center;
+            content: '\25BC';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            padding: 0 1em;
+            background: $blue-7;
+            cursor: pointer;
+            pointer-events: none;
+            -webkit-transition: .25s all ease;
+            -o-transition: .25s all ease;
+            transition: .25s all ease;
+            color: white;
+          }
+          &:hover::after {
+            color: $border-1;
+          }
+        }
+
+      }
+      button, a{
+        padding: 10px 15px;
+        background: $blue-6;
+        color: white;
+        border-radius: 5px;
+        font-size: 16px;
+        &:hover{
+          background: $blue-7;
+        }
+      }
+    }
+    .detail-content{
+      .detail-info{
+        width: 100%;
+        border: 1px solid $border-1;
+        .content{
+          flex-direction: column;
+          display: flex;
+          .title{
+            width: 100%;
+            padding: 16px;
+            text-align: center;
+            font-size: 20px;
+            color: $blue-6;
+            font-weight: bold;
+            border: 1px solid $border-1;
+          }
+          .info {
+            padding: 12px;
+          }
+        }
+        .detail-info-item{
+          display: flex;
+          justify-content: space-between;
+          transition: 0.3s;
+          align-items: stretch;
+          .title, .info {
+            display: flex;
+            padding: 12px;
+            border: 1px solid $border-1;
+            font-size: 16px;
+            align-items: center;
+          }
+          .title{
+            width: 20%;
+          }
+          .info {
+            width: 80%;
+          }
+          .avatar{
+            height: 200px;
+            margin-right: auto;
+            img{
+              width: 200px;
+              height: 100%;
+            }
+          }
+          .user-permission-list {
+            grid-column-gap: 8px;
+            a {
+              background: $blue-6;
+              color: white;
+              padding: 8px;
+              display: flex;
+              align-items: center;
+              border-radius: 5px;
+              font-size: 16px;
+              &:hover{
+                background: $blue-7;
+              }
+            }
+          }
+          .user-post-list {
+            grid-row-gap: 8px;
+            flex-direction: column;
+            align-items: flex-start;
+            a {
+              background: $blue-6;
+              color: white;
+              padding: 8px;
+              display: flex;
+              align-items: center;
+              border-radius: 5px;
+              font-size: 16px;
+              &:hover{
+                background: $blue-7;
+              }
+            }
+          }
+          &:nth-child(even){
+            background-color: $blue-1;
+          }
+          &:hover{
+            background: $blue-2;
+          }
+        }
+      }
+    }
+  }
+}

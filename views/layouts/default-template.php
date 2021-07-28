@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <script language="javascript" src="https://code.jquery.com/jquery-2.0.0.min.js"></script>
     <link rel="icon" href="/logo.png">
-    <title></title>
+    <title>Closure Ecommerce</title>
     <style>
         <?php
             include_once __DIR__ . '/../../public/css/styles.css';

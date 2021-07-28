@@ -4,15 +4,15 @@
         include_once Application::$ROOT_DIR."/public/css/$css";
     ?>
 </style>
-<section class="admin-users">
+<section class="admin-posts">
     <div class="top-headline">
-        <p>List User of Forum</p>
+        <p>List Posts Of User</p>
     </div>
     <div class="content">
         <div class="main-table">
             <div class="table-nav">
                 <div class="table-search">
-                    <input placeholder="Looking for someone?" class="search-input"/>
+                    <input placeholder="Looking for somepost?" class="search-input"/>
                     <button class="search-btn">Search</button>
                 </div>
             </div>
@@ -20,35 +20,28 @@
                 <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Username</th>
-                        <th>Status/Role</th>
+                        <th width="40%">Headline</th>
+                        <th>Catalog</th>
+                        <th>Author</th>
+                        <th>Status</th>
                         <th width="10%">Action</th>
                     </tr>
                 </thead>
+                <tbody>
                 <?php
-                foreach ((array)$users as $user) :?>
+                foreach ((array)$posts as $post) :?>
                     <tr>
-                        <td><?php echo $user['id'] ?></td>
-                        <td><?php echo $user['name'] ?></td>
-                        <td><?php echo $user['email'] ?></td>
-                        <td><?php echo $user['username'] ?></td>
-                        <td class="user-role"><?php echo $user['is_admin'] ?></td>
+                        <td><?php echo $post['id'] ?></td>
+                        <td><?php echo $post['headline'] ?></td>
+                        <td><?php echo $post['catalog']['name'] ?></td>
+                        <td><?php echo $post['user']['username'] ?></td>
+                        <td><?php echo $post['status'] ?></td>
                         <td class="action-list">
-                            <a href="<?php echo '/admin/dashboard/users/info?id='.$user['id'] ?>"><i class="fas fa-info"></i><p>Detail</p></a>
+                            <a href="<?php echo '/admin/dashboard/posts/info?id='.$post['id'] ?>"><i class="fas fa-info"></i><p>Detail</p></a>
                         </td>
                     </tr>
                 <?php endforeach;?>
-                <script>
-                    $('.user-role').map(function () {
-                        if ($(this).html() === "1") {
-                            $(this).html("Admin");
-                        } else {
-                            $(this).html("User");
-                        }
-                    })
-                </script>
+                </tbody>
             </table>
             <div class="table-footer">
                 <div class="table-pagination">

@@ -1,5 +1,5 @@
 .fixed-side-bar {
-  position: absolute;
+  position: fixed;
   left: 0;
   height: 100%;
   width: 300px;
@@ -170,9 +170,14 @@
 .container .page-path a:hover {
   text-decoration: underline;
 }
+.container .container-content {
+  margin-right: 15px;
+  margin-bottom: 50px;
+}
 .footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
   border-top: 1px solid #ebebeb;
   background: white;

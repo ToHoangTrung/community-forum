@@ -13,6 +13,7 @@ class Session
         foreach ($flashMessages as $key => &$flashMessage) {
             $flashMessage['remove'] = true;
         }
+
         $_SESSION[self::FLASH_KEY] = $flashMessages;
     }
 

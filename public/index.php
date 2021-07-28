@@ -3,9 +3,11 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use app\controller\AuthController;
+use app\controller\CatalogController;
 use app\controller\MainController;
 use app\controller\MemberController;
 use app\controller\PostController;
+use app\controller\ReportController;
 use app\controller\UserController;
 use app\core\mvc\Application;
 use app\model\entity\User;
@@ -41,6 +43,8 @@ $app->router->get( '/logout', [AuthController::class, 'logout']);
 $app->router->get('/forum/posts', [PostController::class, 'forumPosts']);
 //Return post list of one specific catalog
 $app->router->get('/forum/posts/catalog', [PostController::class, 'getPostsByCatalog']);
+//Return post list of one specific keyword
+$app->router->get('/forum/posts/search', [PostController::class, 'getPostsByKeyword']);
 //Return post list of one specific tag
 $app->router->get('/forum/posts/tag/', [PostController::class, 'getPostsByTag']);
 //Return 1 post content base on its id
@@ -62,6 +66,24 @@ $app->router->get('/admin/dashboard', [UserController::class, 'admin']);
 
 //Return admin user management page
 $app->router->get('/admin/dashboard/users', [UserController::class, 'adminUsers']);
+//Return admin user detail management page
+$app->router->get('/admin/dashboard/users/info', [UserController::class, 'adminUserDetail']);
+$app->router->post('/admin/dashboard/users/info', [UserController::class, 'updateAdminUserDetail']);
+
+//Return admin post management page
+$app->router->get('/admin/dashboard/posts', [PostController::class, 'adminPosts']);
+//Return admin post detail management page
+$app->router->get('/admin/dashboard/posts/info', [PostController::class, 'adminPostDetail']);
+$app->router->post('/admin/dashboard/posts/info', [PostController::class, 'updateAdminPostDetail']);
+
+//Return admin report management page
+$app->router->get('/admin/dashboard/reports', [ReportController::class, 'adminReports']);
+//Return admin report detail management page
+$app->router->get('/admin/dashboard/reports/info', [ReportController::class, 'adminReportDetail']);
+
+//Return admin catalog management page
+$app->router->get('/admin/dashboard/catalogs', [CatalogController::class, 'adminCatalogs']);
+$app->router->post('/admin/dashboard/catalogs', [CatalogController::class, 'adminNewCatalog']);
 
 
 $app->run();

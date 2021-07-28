@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <script language="javascript" src="https://code.jquery.com/jquery-2.0.0.min.js"></script>
-    <title></title>
+    <link rel="icon" href="/logo.png">
+    <title>Closure Ecommerce</title>
     <style>
         <?php
             include_once __DIR__ . '/../../public/css/styles.css';
@@ -20,6 +21,9 @@
         let focusBlock = null;
 
         if(location.includes('users')) focusBlock = '#users-block'
+        if(location.includes('posts')) focusBlock = '#posts-block'
+        if(location.includes('catalogs')) focusBlock = '#catalogs-block'
+        if(location.includes('reports')) focusBlock = '#reports-block'
 
         $(focusBlock).css('color', '#096dd9').prev().css('color', '#096dd9').parent().css('background', 'white');
     }
@@ -35,7 +39,7 @@
         </div>
     </div>
     <div class="side-bar-content">
-        <a href="/admin/dashboard/users"><div class="side-bar-item">
+        <a href="/admin/dashboard/catalogs"><div class="side-bar-item">
             <i class="fas fa-atlas"></i>
             <p class="item-name" id="catalogs-block">Catalog Management</p>
         </div></a>
@@ -47,13 +51,13 @@
             <i class="fas fa-users"></i>
             <p class="item-name" id="users-block">User Management</p>
         </div></a>
-            <a href="/admin/dashboard/users"><div class="side-bar-item">
+            <a href="/admin/dashboard/posts"><div class="side-bar-item">
             <i class="far fa-newspaper"></i>
             <p class="item-name" id="posts-block">Post Management</p>
         </div></a>
-        <a href="/admin/dashboard/users"><div class="side-bar-item">
-            <i class="fab fa-windows"></i>
-            <p class="item-name" id="system-block">System Setting</p>
+        <a href="/admin/dashboard/reports"><div class="side-bar-item">
+            <i class="fas fa-bug"></i>
+            <p class="item-name" id="reports-block">Report Collection</p>
         </div></a>
         <a href="/admin/dashboard/users"><div class="side-bar-item">
             <i class="fab fa-chrome"></i>

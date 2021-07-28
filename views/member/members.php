@@ -38,6 +38,9 @@
                     </div>
                 </div>
             </div>
+            <script>
+                $('.main').html()
+            </script>
         </div>
     </div>
 </section>

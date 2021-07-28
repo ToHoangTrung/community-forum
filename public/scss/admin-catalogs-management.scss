@@ -1,6 +1,6 @@
 @import "theme";
 
-.admin-users{
+.admin-catalogs{
   .top-headline{
     margin-bottom: 16px;
     p{
@@ -41,13 +41,41 @@
             }
           }
         }
-        .table-new{
-          .new-btn{
-            padding: 10px 15px;
+      }
+      .create-nav{
+        margin-bottom: 16px;
+        form{
+          display: flex;
+          flex-direction: column;
+          grid-row-gap: 8px;
+          input{
+            padding: 10px;
+            width: 400px;
+            background: white;
+            border: 1px solid #CCCCCC;
+            border-radius: 5px;
+            &:focus{
+              border: 1px solid $blue-6;
+            }
+          }
+          textarea {
+            padding: 16px;
+            width: 100%;
+            background: white;
+            border: 1px solid #CCCCCC;
+            border-radius: 5px;
+            outline: none;
+            &:focus{
+              outline: 1px solid $blue-6;
+            }
+          }
+          button{
+            padding: 10px 20px;
+            font-weight: bold;
+            font-size: 16px;
             background: $blue-6;
             color: white;
             border-radius: 5px;
-            font-size: 16px;
             &:hover{
               background: $blue-7;
             }
@@ -115,7 +143,7 @@
               }
             }
           }
-          }
+        }
       }
       .table-footer{
         margin-top: 25px;
