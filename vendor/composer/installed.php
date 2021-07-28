@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '6548a15d1668afee2e53deb1259d87f7ebc34bfb',
+    'reference' => 'e6593326742af150a63834049d2cbb895808a73f',
     'name' => 'udpt/community-forum-web',
   ),
   'versions' => 
@@ -81,7 +81,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '6548a15d1668afee2e53deb1259d87f7ebc34bfb',
+      'reference' => 'e6593326742af150a63834049d2cbb895808a73f',
     ),
     'vlucas/phpdotenv' => 
     array (

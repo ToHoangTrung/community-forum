@@ -58,11 +58,20 @@
   width: 250px;
   padding: 10px;
   border: 1px solid #ccc;
+  font-size: 16px;
+  background: #e6f7ff;
   display: flex;
   justify-content: space-between;
 }
-.new-post .content form .catalog-select .catalog-list .first-item i {
+.new-post .content form .catalog-select .catalog-list .first-item option {
   cursor: pointer;
+  background: #394BA0;
+  color: #e6f7ff;
+  font-size: 16px;
+  z-index: 20;
+  width: 250px;
+  padding: 10px;
+  border: 1px solid #ccc;
 }
 .new-post .content form .catalog-select .catalog-list .first-item:hover {
   border: 1px solid #1890ff;
@@ -128,7 +137,7 @@
   justify-content: flex-start;
   align-items: flex-start;
 }
-.new-post .content form .tag-select .tag-list button {
+.new-post .content form .tag-select .tag-list p {
   background: #1890ff;
   padding: 5px;
   color: #fff;
@@ -136,7 +145,7 @@
   border-radius: 5px;
   min-width: 40px;
 }
-.new-post .content form .tag-select .tag-list button:hover {
+.new-post .content form .tag-select .tag-list p:hover {
   background: #096dd9;
 }
 .new-post .content form .post-content .introduce {

@@ -18,4 +18,12 @@ class TagService
         $stmt->setFetchMode(\PDO::FETCH_ASSOC);
         return $stmt->fetchAll();
     }
+    public function getAll()
+    {
+        $stmt = Application::$app->db->prepare("select * from tag");
+        $stmt->execute();
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+        $tags = $stmt->fetchAll();
+        return $tags;
+    }
 }

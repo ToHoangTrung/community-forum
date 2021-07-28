@@ -15,4 +15,12 @@ class CatalogService
         $stmt->setFetchMode(\PDO::FETCH_ASSOC);
         return $stmt->fetch();
     }
+    public function getAll()
+    {
+        $stmt = Application::$app->db->prepare("select * from catalog");
+        $stmt->execute();
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+        $catalogs = $stmt->fetchAll();
+        return $catalogs;
+    }
 }

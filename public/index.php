@@ -48,9 +48,13 @@ $app->router->get('/forum/posts/info', [PostController::class, 'getPostById']);
 
 //Return user's new post page, show form to save the user's post
 $app->router->get('/user/posts/new', [UserController::class, 'newPost']);
+$app->router->post('/user/posts/new', [UserController::class, 'newPost']);
 
 //Return user's setting page
 $app->router->get('/user/setting', [UserController::class, 'setting']);
+$app->router->post('/user/setting', [UserController::class, 'setting']);
+//Return user's profile page
+$app->router->get('/user/profile', [UserController::class, 'profile']);
 
 //Return members page. display member list here
 $app->router->get('/members', [MemberController::class, 'members']);

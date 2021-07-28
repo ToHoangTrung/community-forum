@@ -44,4 +44,26 @@ class UserService
         $stmt->setFetchMode(\PDO::FETCH_ASSOC);
         return $stmt->fetch();
     }
+    public function getUserByID($userId)
+    {
+        $stmt = Application::$app->db->prepare("select * from user 
+                                                where id = :userid");
+        $stmt->execute(['userid' => $userId]);
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+        $user = $stmt->fetch();
+        return $user;
+    }
+    public function updateUser($data)
+    {
+        $stmt = Application::$app->db->prepare('update user
+                                                set name=:name, birthday=:birthday, email=:email, gender=:gender
+                                                where id=:user_id');
+        $stmt->execute([':name' => $data['name'],
+                        ':birthday' => $data['birthday'],
+                        ':email' => $data['email'],
+                        ':gender' => $data['gender'],
+                        ':user_id' => $data['userid']
+                        ]);
+        return true;
+    }
 }

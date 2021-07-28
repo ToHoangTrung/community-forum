@@ -117,20 +117,17 @@ ul {
     outline: none;
     border: 1px solid #ccc;
 }
-.about-me .personal-info li select {
+.grid-view2 .tab-content .about-me .personal-info li p {
     margin: 0px;
-    padding: 4px;
-    border-radius: 5px;
-    outline: none;
-    border: 1px solid #ccc;
+    line-height: 30px;
 }
 .btn-update {
     height: auto;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 }
-.btn-update button {
+.btn-update a {
     text-align: center;
     color: white;
     padding: 10px;

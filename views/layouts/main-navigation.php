@@ -194,18 +194,24 @@
                 </div>
                 <div class="dropdown-content">
                     <div class="quick-info-search">
-                        <input placeholder="Tìm kiếm..." class="search-input"/>
+                        <input id= "Search" placeholder="Tìm kiếm..." class="search-input"/>
                     </div>
                 </div>
                 <div class="dropdown-footer">
-                    <a href="/">Search</a>
+                    <a id ="1" >Search</a>
                     <a href="/">Advanced Search</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
+ 
 <script>
     highlightFocusBlock();
     handleOpenDropdownService();
+    $('#1').click(function(){
+        let _href = $(this).attr('href');
+        alert(_href+'?keyword='+$('.search-input').val());
+        //$this.attr('href',_href+'?keyword='+$('.search-input').val());
+    });
 </script>
