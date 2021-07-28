@@ -20,7 +20,7 @@ class User extends DBModel
 
     public string $image_url = '';
 
-    public bool $is_admin = false;
+    public ?int $is_admin = 0;
 
     public static function tableName(): string
     {

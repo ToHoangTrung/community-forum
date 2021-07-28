@@ -15,10 +15,12 @@
     function handleOpenDropdownService() {
         let mainBlock = '.main-dropdown';
         $(mainBlock).click(function () {
-            $(mainBlock).not(this).next().next('.dropdown-service').slideUp();
-            $(mainBlock).not(this).next('.arrow-up').hide();
-            $(this).next().next('.dropdown-service').slideToggle();
-            $(this).next('.arrow-up').toggle();
+            $(mainBlock).not(this).next('.dropdown-service').slideUp();
+            $(mainBlock).not(this).children('.arrow-up').hide();
+            $(this).next('.dropdown-service').slideToggle();
+            $(this).children('.arrow-up').toggle();
+            // $(this).css('background','#0050b3');
+            // $(mainBlock).not(this).css('background','#096dd9');
         });
     }
 </script>
@@ -49,8 +51,8 @@
                                 <p class="name-image"><?php echo strtoupper(Application::$app->user->username[0]) ?></p>
                             <?php endif; ?>
                         <p class="user-name"><?php echo Application::$app->user->username?></p>
+                        <div class="arrow-up"></div>
                     </div>
-                    <div class="arrow-up"></div>
                     <div class="dropdown-user-service dropdown-service">
                         <div class="dropdown-header">
                             <button id="account-block">Tài khoản</button>
@@ -141,8 +143,10 @@
                 </div>
                 <div class="user-service">
                     <div class="user-service-item">
-                        <button class="user-link nav-link main-dropdown"><i class="far fa-bell"></i></button>
-                        <div class="arrow-up"></div>
+                        <div class="user-link nav-link main-dropdown">
+                            <i class="far fa-bell"></i>
+                            <div class="arrow-up"></div>
+                        </div>
                         <div class="dropdown-notification-service dropdown-service">
                             <div class="dropdown-header">
                                 <p>Thông báo</p>
@@ -156,8 +160,10 @@
                         </div>
                     </div>
                     <div class="user-service-item">
-                        <button class="user-link nav-link main-dropdown"><i class="far fa-envelope"></i></button>
-                        <div class="arrow-up"></div>
+                        <div class="user-link nav-link main-dropdown">
+                            <i class="far fa-envelope"></i>
+                            <div class="arrow-up"></div>
+                        </div>
                         <div class="dropdown-mail-service dropdown-service">
                             <div class="dropdown-header">
                                 <p>Tin nhắn</p>
@@ -176,8 +182,12 @@
     </div>
     <div class="search-block service-block">
         <div class="search-service">
-            <button class="search-link nav-link main-dropdown"><i class="fas fa-search" style="margin-right: 10px"></i>Tìm kiếm</button>
-            <div class="arrow-up"></div>
+            <div class="search-link nav-link main-dropdown">
+                <i class="fas fa-search" style="margin-right: 5px"></i>
+                <p>Tìm kiếm</p>
+                <div class="arrow-up"></div>
+            </div>
+
             <div class="dropdown-search-service dropdown-service">
                 <div class="dropdown-header">
                     <p>Tìm kiếm</p>

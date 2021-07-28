@@ -42,9 +42,10 @@ $app->router->get('/forum/posts', [PostController::class, 'forumPosts']);
 //Return post list of one specific catalog
 $app->router->get('/forum/posts/catalog', [PostController::class, 'getPostsByCatalog']);
 //Return post list of one specific tag
-$app->router->get('/forum/forum/tag/', [PostController::class, 'getPostsByTag']);
+$app->router->get('/forum/posts/tag/', [PostController::class, 'getPostsByTag']);
 //Return 1 post content base on its id
 $app->router->get('/forum/posts/info', [PostController::class, 'getPostById']);
+$app->router->post('/forum/posts/info', [PostController::class, 'addNewCommentForPost']);
 
 //Return user's new post page, show form to save the user's post
 $app->router->get('/user/posts/new', [UserController::class, 'newPost']);
@@ -55,7 +56,7 @@ $app->router->get('/user/setting', [UserController::class, 'setting']);
 //Return members page. display member list here
 $app->router->get('/members', [MemberController::class, 'members']);
 //Return 1 member profile base on its id, show the profile and members navigation to go to other member page
-$app->router->get('/members/profile/', [MemberController::class, 'getMemberById']);
+$app->router->get('/members/profile', [MemberController::class, 'getMemberById']);
 
 //Return admin dashboard page
 $app->router->get('/admin/dashboard', [UserController::class, 'admin']);
@@ -63,5 +64,6 @@ $app->router->get('/admin/dashboard', [UserController::class, 'admin']);
 //Return admin user management page
 $app->router->get('/admin/dashboard/users', [UserController::class, 'adminUsers']);
 
+//$app->router->post('/forum/posts/viewPost', [PostController::class, 'viewPost']);
 
 $app->run();

@@ -26,15 +26,19 @@
         width: 20px;
       }
     }
-    .arrow-up {
-      position: absolute;
-      display: none;
-      bottom: 0;
-      width: 0;
-      height: 0;
-      border-left: 7px solid transparent;
-      border-right: 7px solid transparent;
-      border-bottom: 7px solid $blue-4;
+    .main-dropdown{
+      position: relative;
+      cursor: pointer;
+      .arrow-up {
+        position: absolute;
+        display: none;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-bottom: 7px solid $blue-4;
+      }
     }
     .dropdown-service {
       min-width: 300px;
@@ -112,16 +116,16 @@
             color: white;
             font-weight: bold;
             font-size: 16px;
-            padding: 5px 7px;
+            padding: 5px 9px;
             background: $blue-5;
             border-radius: 5px;
           }
           &:hover {
             background: $blue-8;
           }
-        }
-        .arrow-up {
-          left: 28%;
+          .arrow-up{
+            left: 47%;
+          }
         }
       }
       .user-service {
@@ -134,7 +138,11 @@
           align-items: center;
           .user-link {
             padding: 0 10px;
+            cursor: pointer;
             background: $blue-7;
+            i{
+              text-align: center;
+            }
             &:hover {
               background: $blue-8;
               i {
@@ -145,13 +153,13 @@
           &:first-child {
             border-right: 1px solid $blue-9;
             border-left: 1px solid $blue-9;
-            .arrow-up {
-              left: 67%;
+            .arrow-up{
+              left: 32%;
             }
           }
-          &:nth-child(2) {
-            .arrow-up {
-              left: 87%;
+          &:nth-child(2){
+            .arrow-up{
+              left: 32%;
             }
           }
           .dropdown-mail-service{
@@ -382,22 +390,22 @@
       position: relative;
       .search-link {
         background: $blue-7;
-        padding: 0 15px;
+        padding: 0 10px;
         font-weight: normal;
         font-size: 14px;
-
+        cursor: pointer;
+        justify-content: center;
+        position: relative;
         &:hover {
           background: $blue-8;
-
           i {
             color: white;
           }
         }
-
+        .arrow-up{
+          left: 41%;
+        }
         margin-left: 10px;
-      }
-      .arrow-up {
-        left: 47%;
       }
       .dropdown-search-service{
         width: 350px;

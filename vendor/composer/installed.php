@@ -1,12 +1,12 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-develop',
+    'version' => 'dev-develop',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => 'e6593326742af150a63834049d2cbb895808a73f',
     'name' => 'udpt/community-forum-web',
   ),
   'versions' => 
@@ -76,12 +76,12 @@
     ),
     'udpt/community-forum-web' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-develop',
+      'version' => 'dev-develop',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => 'e6593326742af150a63834049d2cbb895808a73f',
     ),
     'vlucas/phpdotenv' => 
     array (

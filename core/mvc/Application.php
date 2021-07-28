@@ -48,7 +48,7 @@ class Application
         if ($userId) {
 //            $key = $this->userClass::primaryKey();
 //            $key = 'id';
-            $this->user = $this->userClass::findOne(['id' => $userId]);
+           $this->user = $this->userClass::findOne(['id' => $userId]);
         }
     }
 
