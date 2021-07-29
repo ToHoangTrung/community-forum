@@ -20,6 +20,8 @@ use Composer\Semver\VersionParser;
 
 
 
+
+
 class InstalledVersions
 {
 private static $installed = array (
@@ -30,7 +32,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '6548a15d1668afee2e53deb1259d87f7ebc34bfb',
+    'reference' => 'e6593326742af150a63834049d2cbb895808a73f',
     'name' => 'udpt/community-forum-web',
   ),
   'versions' => 
@@ -105,7 +107,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '6548a15d1668afee2e53deb1259d87f7ebc34bfb',
+      'reference' => 'e6593326742af150a63834049d2cbb895808a73f',
     ),
     'vlucas/phpdotenv' => 
     array (
@@ -133,7 +135,6 @@ $packages = array();
 foreach (self::getInstalled() as $installed) {
 $packages[] = array_keys($installed['versions']);
 }
-
 
 if (1 === \count($packages)) {
 return $packages[0];
@@ -326,6 +327,7 @@ public static function reload($data)
 self::$installed = $data;
 self::$installedByVendor = array();
 }
+
 
 
 

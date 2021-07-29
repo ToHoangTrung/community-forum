@@ -6,7 +6,7 @@
 </style>
 <section class="members">
     <div class="top-headline">
-        <p>Notable members</p>
+        <p>Members list</p>
     </div>
     <div class="content">
         <div class="bonus-info-list">
@@ -15,7 +15,7 @@
             <div class="introduce">
                 <p>Name</p>
                 <p>Posts</p>
-                <p>Like</p>
+                <p>Rating</p>
                 <div class="filter-block">
                     <p>Last post</p>
                     <a href="/">Filter<i class="fas fa-caret-down"></i></a>
@@ -23,20 +23,22 @@
 
             </div>
             <div class="list">
-                <div class="item">
-                    <div class="avatar">
-                        <img src="https://danbooru.donmai.us/data/original/f5/07/f50790fdf8324e9a5dbe555c4d52b070.png"/>
+               <?php foreach ((array)$members as $member) :?>
+                    <div class="item">
+                        <div class="avatar">
+                            <img src="<?php echo '/assets/image/user/'.$member['image_url']?>"/>
+                        </div>
+                        <div class="headline">
+                            <a href="/members/profile"><?php echo $member['name']?></a>
+                        </div>
+                        <p><?php echo $member['count_post']?></p>
+                        <p><?php echo $member['avg_rating']?></p>
+                        <div class="newest-post">
+                            <a class="name" href="/forum/posts/info"><?php echo $member['new_post']['headline']?></a>
+                            <p class="time"><?php echo $member['new_post']['updated_date']?> </p>
+                        </div>
                     </div>
-                    <div class="headline">
-                        <a href="/members/profile">PixelGoose</a>
-                    </div>
-                    <p>4,8K</p>
-                    <p>70,2K</p>
-                    <div class="newest-post">
-                        <a class="name" href="/">Mẹo và Kinh Nghiệm Modding Tản Nhiệt Khí hoặc Tản nhiệt nước AIO cho VGA</a>
-                        <p class="time">Today at 5:42 PM </p>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>

@@ -32,6 +32,21 @@ class PostController extends BaseController
         ]);
     }
 
+    //-------------------------------------------------------------------------------------------
+    public function getPostsByKeyword(Request $request){
+        $keyword = $request->getBody()['keyword'];
+        $posts = $this->postService->getPostsByKeyword($keyword);
+        //$catalog = $this->catalogService->getById($catalogId);
+        return $this->render('forum/posts-by-keyword',[
+            //'catalog' => $catalog,
+            'keyword'=>$keyword,
+            'posts' => $posts,
+            'css' => 'forum-posts.css'
+       ]);
+    }
+
+    //---------------------------------------------------------------------------------------------
+
     public function getPostsByTag(Request $request){
     }
 

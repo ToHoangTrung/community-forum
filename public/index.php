@@ -8,6 +8,7 @@ use app\controller\MemberController;
 use app\controller\PostController;
 use app\controller\UserController;
 use app\core\mvc\Application;
+use app\core\mvc\Router;
 use app\model\entity\User;
 
 
@@ -64,4 +65,11 @@ $app->router->get('/admin/dashboard', [UserController::class, 'admin']);
 $app->router->get('/admin/dashboard/users', [UserController::class, 'adminUsers']);
 
 
+
+//------------------------------------------------------------------------------------------
+// Search Posts by Keywords :
+$app->router->get('/forum/posts/keyword', [PostController::class, 'getPostsByKeyword']);
+
+
+//----------------------------------------------------------------------------------------------
 $app->run();

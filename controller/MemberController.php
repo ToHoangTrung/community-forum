@@ -18,7 +18,9 @@ class MemberController extends BaseController
 
     public function members()
     {
+        $members = $this->userService->getAllUser();
         return $this->render('member/members',[
+            'members' => $members,
             'css' => 'page-members.css'
         ]);
     }
