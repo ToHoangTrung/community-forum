@@ -1,4 +1,4 @@
-<style>
+<style type="text/css">
     <?php
 
     use app\core\mvc\Application;
@@ -8,21 +8,26 @@
 </style>
 
 
+
 <section class="user-profile">
     <div class="row">
         <div class="grid-view1">
             <div class="side-bar">
                 <!-- Professional Details -->
                 <h5 class="tittle">User Profile</h5>
-                <div class="user-image">
-                    <?php
-                        $imgUrl = Application::$app->user->image_url;
+                <form action="" method="post" enctype="multipart/form-data">
+                    <div class="user-image">
+                        <?php
+                        $imgUrl = $user['image_url'];
                         if ($imgUrl != null) : ?>
-                            <img class="img-responsive" alt="" src=<?php echo Application::$PUBLIC_PATH . "/assets/image/user/" . Application::$app->user->image_url ?> />
+                            <img class="img-responsive" alt="" src=<?php echo Application::$PUBLIC_PATH . "/assets/image/user/" . $user['image_url'] ?> />
                         <?php else : ?>
                             <p class="name-image"><?php echo strtoupper(Application::$app->user->username[0]) ?></p>
-                    <?php endif; ?>
-                </div>
+                        <?php endif; ?>
+                        <input type="file" class="my_avatar" name="userfile">
+                    </div>
+                    <input type="submit" class="submit-avatar" value="change avatar">
+                </form>
                 <ul class="personal-info">
                     <li>
                         <p> <span> Username</span> <?php echo $user['username'] ?> </p>

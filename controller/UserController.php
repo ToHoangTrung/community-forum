@@ -82,10 +82,21 @@ class UserController extends BaseController
         ]);
     }
 
-    public function profile(){
+    public function profile(Request $request){
         if (isset(Application::$app->user->id) === false)
             header('Location: /login');
         $userID = Application::$app->user->id;
+        if ( $request->getMethod() === 'post'){
+           $file = $_FILES['userfile'];
+           $allowd = array ('image/jpeg', 'image/jpg', 'image/png');
+           if (in_array($file['type'],$allowd)){
+               var_dump($file);
+               $dir = '../public/assets/image/user';
+               $filename = basename($file['name']);
+               move_uploaded_file($file['tmp_name'], "$dir/$filename");
+               $this->userService->updateAvatar($filename,$userID);
+           }
+        }
         $user = $this->userService->getUserByID($userID);
         $user['birthday'] = FunctionalService::formatDisplayDatetime($user['birthday']);
         return $this->render('user/user-profile',[

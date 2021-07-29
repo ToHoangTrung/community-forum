@@ -66,4 +66,14 @@ class UserService
                         ]);
         return true;
     }
+    public function updateAvatar($filename, $userId)
+    {
+        $stmt = Application::$app->db->prepare('update user
+                                                set image_url=:filename
+                                                where id=:user_id');
+        $stmt->execute([':filename' => $filename,
+                        ':user_id' => $userId
+                        ]);
+        return true;
+    }
 }
