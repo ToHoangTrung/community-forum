@@ -16,7 +16,6 @@ class CommentService
 
     public function getPostComments($postId)
     {
-    public function getCommentsByPostId($postId) {
         $stmt = Application::$app->db->prepare("select * from comment where comment.post_id = :id");
         $stmt->execute(['id' => $postId]);
         $stmt->setFetchMode(\PDO::FETCH_ASSOC);
@@ -29,7 +28,14 @@ class CommentService
         }
         return $comments;
     }
-}
+
+    public function getCommentsByPostId($postId) {
+        $stmt = Application::$app->db->prepare("select * from comment where comment.post_id = :id");
+        $stmt->execute(['id' => $postId]);
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+        $comments = $stmt->fetchAll();
+
+        $userService = new UserService();
         $postService = new PostService();
 
         foreach ($comments as &$comment){

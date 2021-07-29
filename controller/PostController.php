@@ -9,8 +9,8 @@ use app\core\mvc\controllers\BaseController;
 use app\core\mvc\procedures\Request;
 use app\core\mvc\procedures\Response;
 use app\services\CatalogService;
+use app\services\CommentService;
 use app\services\PostService;
-use app\services\ReportService;
 
 class PostController extends BaseController
 {
@@ -30,7 +30,7 @@ class PostController extends BaseController
     public function getPostsByCatalog(Request $request){
         $catalogId = $request->getBody()['id'];
         $posts = $this->postService->getPostsByCatalog($catalogId);
-        $catalog = $this->catalogService->getById($catalogId);
+        $catalog = $this->catalogService->getCatalogById($catalogId);
         return $this->render('forum/posts',[
             'catalog' => $catalog,
             'posts' => $posts,
@@ -38,13 +38,9 @@ class PostController extends BaseController
         ]);
     }
 
-    public function getPostsByTag(Request $request){
-
-    }
-
     public function getPostById(Request $request){
         $postId= $request->getBody()['id'];
-        $post= $this->postService->getById($postId);
+        $post= $this->postService->getPostById($postId);
         $content = file_get_contents(Application::$ROOT_DIR.'/public/assets/content/post/'.$post['content_url']);
         foreach ($post['comments'] as &$comment) {
             $comment['content'] = file_get_contents(Application::$ROOT_DIR.'/public/assets/content/comment/'.$comment['content_url']);
@@ -53,8 +49,7 @@ class PostController extends BaseController
             'content'=> $content,
             'author' => $post['user'],
             'post' => $post,
-            'css' => 'forum-post.css'
-            'css' => 'forum-posts.css',
+            'css' => 'forum-post.css',
         ]);
     }
 
@@ -74,8 +69,6 @@ class PostController extends BaseController
             Application::$app->response->redirect('/forum/posts/info?id='.$postId);
         }
     }
-
-
 
     public function forumPosts(){
         return $this->render('forum/forum',[

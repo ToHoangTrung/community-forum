@@ -117,9 +117,6 @@
   border-top: 1px solid #ccc;
   margin: 16px 0;
 }
-.post .content .topic-list .topic-item .topic-content-block .main-content {
-  height: 300px;
-}
 .post .content .topic-list .topic-item .topic-content-block .topic-footer {
   display: flex;
   justify-content: space-between;

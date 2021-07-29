@@ -7,7 +7,7 @@ use app\core\mvc\Application;
 
 class PostService
 {
-    public function getPostById($id){
+    public function getPostById($id) {
         $stmt = Application::$app->db->prepare("select * from post where post.id = :id");
         $stmt->execute(['id' => $id]);
         $stmt->setFetchMode(\PDO::FETCH_ASSOC);
@@ -31,7 +31,7 @@ class PostService
         return $posts[0];
     }
 
-    public function getByUserId($userId){
+    public function getByUserId($userId) {
         $stmt = Application::$app->db->prepare("select * from post where post.user_id = :id");
         $stmt->execute(['id' => $userId]);
         $stmt->setFetchMode(\PDO::FETCH_ASSOC);
@@ -41,7 +41,7 @@ class PostService
         $userService = new UserService();
         $catalogService = new CatalogService();
 
-        foreach ($posts as &$post){
+        foreach ($posts as &$post) {
             $post['created_date'] = FunctionalService::formatDisplayDatetime($post['created_date']);
             $post['updated_date'] = FunctionalService::formatDisplayDatetime($post['updated_date']);
             $post['user'] = $userService->getUserByPost($post['id']);
@@ -49,25 +49,6 @@ class PostService
             $post['catalog'] = $catalogService->getCatalogById($post['catalog_id']);
         }
         return $posts;
-    public function getById(int $id){
-        $stmt = Application::$app->db->prepare("select * from post where post.id = :id");
-        $stmt->execute(['id'=> $id]);
-        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
-        $posts = $stmt->fetchAll();
-
-        $tagService = new TagService();
-        $userService = new UserService();
-        $commentService = new CommentService();
-
-        foreach ($posts as &$post)
-        {
-            $post['created_date'] = FunctionalService::formatDisplayDatetime($post['created_date']);
-            $post['updated_date'] = FunctionalService::formatDisplayDatetime($post['updated_date']);
-            $post['user'] = $userService->getUserByPost($post['id']);
-            $post['tags'] = $tagService->getTagsByPost($post['id']);
-            $post['comments'] = $commentService ->getPostComments($post['id']);
-        }
-        return $posts[0];
     }
 
     public function getPostsByCatalog($catalogId)
@@ -89,8 +70,7 @@ class PostService
         return $posts;
     }
 
-    public function getAll()
-    {
+    public function getAll() {
         $stmt = Application::$app->db->prepare("select * from post where post.id >= :id");
         $stmt->execute(['id' => 1]);
         $stmt->setFetchMode(\PDO::FETCH_ASSOC);

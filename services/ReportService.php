@@ -58,7 +58,7 @@ class ReportService
             $report['created_date'] = FunctionalService::formatDisplayDatetime($report['created_date']);
             $report['user'] = $userService->getUserById($report['user_id']);
         }
-        return $reports[0];
+        return $reports;
     }
 
 }
