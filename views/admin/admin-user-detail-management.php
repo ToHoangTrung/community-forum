@@ -90,7 +90,7 @@
             let userId = "<?php echo $user['id'] ?>"
              $.ajax({
                  type: "POST",
-                 url: 'http://localhost:8080/admin/dashboard/users/info',
+                 url: 'http://localhost:8081/admin/dashboard/users/info',
                  dataType: 'json',
                  data: {
                      userId: userId,

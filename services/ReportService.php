@@ -53,12 +53,10 @@ class ReportService
         $reports = $stmt->fetchAll();
 
         $userService = new UserService();
-        $postService = new PostService();
 
         foreach ($reports as &$report){
             $report['created_date'] = FunctionalService::formatDisplayDatetime($report['created_date']);
             $report['user'] = $userService->getUserById($report['user_id']);
-            $report['post'] = $postService->getPostById($report['post_id']);
         }
         return $reports[0];
     }

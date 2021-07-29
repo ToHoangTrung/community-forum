@@ -1,0 +1,100 @@
+@import "theme";
+
+.home{
+  .content{
+    display: grid;
+    grid-template-columns: 69% 30%;
+    justify-content: space-between;
+    align-items: stretch;
+    .main-list{
+      display: flex;
+      flex-direction: column;
+      grid-row-gap: 16px;
+      .introduce{
+        display: grid;
+        color: #FFFFFF;
+        padding: 10px;
+        grid-template-columns: 40% 12% 12% 36%;
+        background: $blue-5;
+      }
+      .list{
+        .item{
+          display: grid;
+          grid-template-columns: 5% 35% 12% 12% 36%;
+          align-items: center;
+          border: 1px solid #E4E4E4;
+          padding: 10px;
+          transition: 0.3s;
+          &:hover{
+            background: #e7e4e4;
+          }
+          .item-logo{
+            color: $blue-7;
+            font-size: 30px;
+          }
+          .headline{
+            font-size: 20px;
+            color: $blue-6;
+            font-weight: bold;
+            a{
+              font-size: 20px;
+              transition: 0.3s;
+              color: $blue-6;
+              &:hover{
+                text-decoration: underline;
+              }
+            }
+          }
+          .newest-post{
+            display: grid;
+            grid-template-columns: 18% 80%;
+            align-items: center;
+            justify-content: space-between;
+            .avatar{
+              img{
+                width: 100%;
+                height: 100%;
+                margin-right: auto;
+                border-radius: 50%;
+              }
+            }
+            .info{
+              display: grid;
+              grid-template-columns: 100%;
+              grid-row-gap: 3px;
+              .name{
+                cursor: pointer;
+                color: $blue-6;
+                font-weight: bold;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                &:hover{
+                  text-decoration: underline;
+                }
+              }
+              .time{
+                color: #8C8C8C;
+              }
+              .author{
+                cursor: pointer;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                a{
+                  color: $blue-6;
+                  &:hover{
+                    text-decoration: underline;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .bonus-info-list{
+      border: 1px solid black;
+    }
+  }
+}

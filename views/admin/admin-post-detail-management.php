@@ -59,31 +59,31 @@
                         <button>Show/Hide Report</button>
                     </div>
                     <div class="info">
-                        <div class="info-block" style="display: none">
+                        <div class="info-block">
                             <?php echo $content ?>
                         </div>
-                        <div class="info-block comment">
-                            <?php
-                            foreach ((array)$post['comments'] as $comment) :?>
-                                <div class="info-item">
-                                    <div class="user-info">
-                                        User comment
-                                    </div>
-                                    <div class="content-info">
-                                        <?php echo $comment['content'] ?>
-                                    </div>
-                                </div>
-                            <?php endforeach;?>
-                        </div>
-                        <div class="info-block report" style="display: none">
-                            <?php
-                            foreach ((array)$post['tags'] as $tag) :?>
-                                <div class="info-item">
-                                    <div class="user-info">User comment</div>
-                                    <div class="content-info"><?php echo $post['headline'] ?></div>
-                                </div>
-                            <?php endforeach;?>
-                        </div>
+<!--                        <div class="info-block comment">-->
+<!--                            --><?php
+//                            foreach ((array)$post['comments'] as $comment) :?>
+<!--                                <div class="info-item">-->
+<!--                                    <div class="user-info">-->
+<!--                                        User comment-->
+<!--                                    </div>-->
+<!--                                    <div class="content-info">-->
+<!--                                        --><?php //echo $comment['content'] ?>
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            --><?php //endforeach;?>
+<!--                        </div>-->
+<!--                        <div class="info-block report" style="display: none">-->
+<!--                            --><?php
+//                            foreach ((array)$post['tags'] as $tag) :?>
+<!--                                <div class="info-item">-->
+<!--                                    <div class="user-info">User comment</div>-->
+<!--                                    <div class="content-info">--><?php //echo $post['headline'] ?><!--</div>-->
+<!--                                </div>-->
+<!--                            --><?php //endforeach;?>
+<!--                        </div>-->
                     </div>
                 </div>
             </div>
@@ -95,7 +95,7 @@
             let postId = "<?php echo $post['id'] ?>"
             $.ajax({
                 type: "POST",
-                url: 'http://localhost:8080/admin/dashboard/posts/info',
+                url: 'http://localhost:8081/admin/dashboard/posts/info',
                 dataType: 'json',
                 data: {
                     postId: postId,

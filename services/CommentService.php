@@ -21,7 +21,6 @@ class CommentService
             $comment['created_date'] = FunctionalService::formatDisplayDatetime($comment['created_date']);
             $comment['updated_date'] = FunctionalService::formatDisplayDatetime($comment['updated_date']);
             $comment['user'] = $userService->getUserById($comment['user_id']);
-            $comment['post'] = $postService->getPostById($comment['post_id']);
         }
         return $comments;
     }

@@ -1,0 +1,105 @@
+@import "theme";
+
+.member-wall-introduce{
+  margin: 10px auto;
+  width: 80%;
+  background: white;
+  .member-introduce{
+    a, p{
+      color: black;    font-size: 16px;
+    }
+    border: 1px solid $border-2;
+    position: relative;
+    .member-logo{
+      width: 200px;
+      height: 200px;
+      top: 14px;
+      left: 14px;
+      position: absolute;
+      padding: 8px;
+      border: 1px solid $blue-6;
+      img{
+        max-width: 100%;
+        max-height: 100%;
+        display: block;
+        margin: auto;
+      }
+    }
+    .basic-info{
+      display: flex;
+      flex-direction: column;
+      grid-row-gap: 10px;
+      padding: 10px 10px 10px 20%;
+      background: $blue-1;
+      .member-name{
+        font-size: 20px;
+        color: $blue-7;
+        font-weight: bold;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+      .member-rank{
+        color: white;
+        background: #4972E7;
+        border-radius: 5px;
+        min-width: 10%;
+        max-width: 200px;
+        text-align: center;
+        padding: 5px;
+        &:hover{
+          filter: brightness(90%);
+        }
+      }
+      .other-info{
+        color: $gray-text-1;
+        span{
+          color: black;
+        }
+      }
+    }
+    .member-post-info{
+      display: flex;
+      justify-content: space-between;
+      grid-row-gap: 10px;
+      padding: 10px 10px 10px 20%;
+      background: white;
+      .info-item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        grid-row-gap: 10px;
+        .label{
+          color: $gray-text-1;
+        }
+      }
+    }
+    .member-contact{
+      padding: 10px 10px 10px 20%;
+      background: white;
+      display: flex;
+      .contact-item{
+        transition: 0.3s;
+        font-size: 14px;
+        padding: 7px;
+        color: $blue-5;
+        border: 1px solid $border-1;
+        &:hover{
+          background: $blue-1;
+        }
+      }
+    }
+  }
+  .member-nav{
+    display: flex;
+    background: $blue-7;
+    .nav-link{
+      color: $blue-3;
+      padding: 10px;
+      &:hover{
+        background: $blue-8;
+        color: white;
+      }
+    }
+  }
+}
