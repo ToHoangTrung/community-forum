@@ -27,7 +27,7 @@
                                 <img src="https://danbooru.donmai.us/data/original/f5/07/f50790fdf8324e9a5dbe555c4d52b070.png"/>
                             </div>
                             <div class="info">
-                                <a class="name" href="/">GIỚI THIỆU CUỘC THI DU LỊCH & CU</a>
+                                <a class="name" href="/posts/info?id=1">GIỚI THIỆU CUỘC THI DU LỊCH & CU</a>
                                 <p class="time">Today at 5:42 PM </p>
                                 <p class="author">by <a href="/">PixelGoose</a></p>
                             </div>

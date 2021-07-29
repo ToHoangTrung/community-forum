@@ -44,8 +44,8 @@ class UserService
         $stmt->setFetchMode(\PDO::FETCH_ASSOC);
         return $stmt->fetch();
     }
+    //----------------------------------------------------------------------------------------------------
 
-    //----------------------------------------------------------------------------------------------
     public function getAllUser()
     {
         $stmt=Application::$app->db->prepare("select user.id, user.name, user.username, user.email, user.image_url, COUNT(post.id) as count_post,AVG(rating.rating) as avg_rating
@@ -74,4 +74,14 @@ class UserService
 
 
     //---------------------------------------------------------------------------------------------------------------
+    public function getUserByComment($commentId)
+    {
+        $stmt = Application::$app->db->prepare("select 
+            user.id, user.name, user.username, user.email, user.image_url
+            from user join comment on user.id = comment.user_id
+            where comment.id = :id");
+        $stmt->execute(['id' => $commentId]);
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+        return $stmt->fetch();
+    }
 }
