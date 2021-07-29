@@ -90,4 +90,28 @@ class UserService
             $stmt->execute(['userId' => $userId, 'permissionId' => $permissionId]);
         }
     }
+
+    public function updateUser($data)
+    {
+        $stmt = Application::$app->db->prepare('update user
+                                                set name=:name, birthday=:birthday, email=:email, gender=:gender
+                                                where id=:user_id');
+        $stmt->execute([':name' => $data['name'],
+            ':birthday' => $data['birthday'],
+            ':email' => $data['email'],
+            ':gender' => $data['gender'],
+            ':user_id' => $data['userid']
+        ]);
+        return true;
+    }
+    public function updateAvatar($filename, $userId)
+    {
+        $stmt = Application::$app->db->prepare('update user
+                                                set image_url=:filename
+                                              where id=:user_id');
+        $stmt->execute([':filename' => $filename,
+            ':user_id' => $userId
+        ]);
+        return true;
+    }
 }

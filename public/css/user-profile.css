@@ -1,3 +1,7 @@
+body{
+    margin: 0;
+    padding: 0;
+}
 h5.tittle {
     font-size: 18px;
     padding: 20px;
@@ -38,6 +42,7 @@ p {
     background-size: 100% 100%;
     position: relative;
     overflow: hidden;
+    border: 1px solid #526b83;
 }
 .side-bar .user-image img {
     max-width: 100%;
@@ -55,6 +60,46 @@ p {
     font-size: 150px;
     background: #40a9ff;
     border-radius: 50%;
+    overflow: hidden;
+}
+.side-bar .user-image .my_avatar {
+    position: absolute;
+    bottom: 0;
+    outline: none;
+    color: transparent;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 110px;
+    cursor: pointer;
+    transition: 0.5s;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+}
+.side-bar .user-image .my_avatar::-webkit-file-upload-button{
+    visibility: hidden;
+}
+.side-bar .user-image .my_avatar::before {
+    content: "\f030";
+    font-family: FontAwesome;
+    font-size: 30px;
+    color: #fff;
+    display: inline-block;
+}
+.side-bar .user-image .my_avatar:hover {
+    opacity: 1;
+}
+.side-bar .submit-avatar {
+    text-align: center;
+    color: #0050b3;
+    padding: 10px;
+    border-style: none;
+    min-width: 70px;
+    transition: 0.3s;
+    background: white;
+    position: relative;
+    top: 20px;
+    left: 80px;
+    cursor: pointer;
 }
 ul {
     list-style: none;
@@ -67,7 +112,6 @@ ul {
     margin: 0px;
     line-height: 30px;
 }
-
 .side-bar .personal-info li span {
 	width: 50%;
 	float: left;
@@ -126,20 +170,17 @@ ul {
     outline: none;
     border: 1px solid #ccc;
 }
-.about-me .personal-info li select {
+.grid-view2 .tab-content .about-me .personal-info li p {
     margin: 0px;
-    padding: 4px;
-    border-radius: 5px;
-    outline: none;
-    border: 1px solid #ccc;
+    line-height: 30px;
 }
 .btn-update {
     height: auto;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 }
-.btn-update button {
+.btn-update a {
     text-align: center;
     color: white;
     padding: 10px;

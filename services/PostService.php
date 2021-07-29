@@ -96,4 +96,16 @@ class PostService
         $stmt = Application::$app->db->prepare("UPDATE post SET status = :status where id = :id");
         $stmt->execute(['id' => $postId, 'status' => $status]);
     }
+
+    public function createPost($data)
+    {
+        $stmt = Application::$app->db->prepare('insert into post (headline ,user_id, content_url, catalog_id) 
+                                                values (:headline, :user_id, :content_url, :catalog_id)');
+        $stmt->execute([':headline' => $data['headline'],
+                        ':user_id' => $data['userid'],
+                        ':content_url' => $data['content'],
+                        ':catalog_id' => $data['catalog'],
+                        ]);
+        return true;
+    }
 }

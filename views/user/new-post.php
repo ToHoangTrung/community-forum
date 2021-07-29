@@ -22,31 +22,25 @@
         });
     }
 </script>
+
 <section class="new-post">
     <div class="top-headline">
         <p>Đăng bài</p>
     </div>
     <div class="content">
-        <form>
+        <form action="" method = "post">
             <input name="headline" type="text" class="headline-input" placeholder="Nhập tựa đề để đăng bài mới "/>
             <div class="catalog-select">
                 <p class="tutorial">Hãy lựa chọn loại câu hỏi cho bài viết của bạn </p>
                 <div class="catalog-list">
-                    <div class="first-item">
-                        <p id="category-value">Laptop và PC</p>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="select-custom">
-                        <p class="select-item">Friend & Love</p>
-                        <p class="select-item">Young Party</p>
-                        <p class="select-item">Tư Vấn & Chuyện Trò</p>
-                        <p class="select-item">Phòng Truyện</p>
-                        <p class="select-item">Kho Game</p>
-                        <p class="select-item">Phổ thông</p>
-                        <p class="select-item">Kỹ năng mềm</p>
-                        <p class="select-item">Giới tính+</p>
-                        <p class="select-item">Tin học bình dân</p>
-                    </div>
+
+                    <select class="first-item" name ="catalog">
+                        <?php
+                            foreach ((array)$catalogs as $catalog) :
+                        ?>
+                        <option value = <?php echo $catalog['id'] ?> class="select-item"><?php echo $catalog['name'] ?></option>
+                        <?php endforeach ?>
+                    </select>
                 </div>
             </div>
             <div class="tag-select">
@@ -56,33 +50,11 @@
                     <button class="add-tag-btn">Thêm tag</button>
                 </div>
                 <div class="tag-list">
-                    <button class="tag-btn">C</button>
-                    <button class="tag-btn">C++</button>
-                    <button class="tag-btn">Java</button>
-                    <button class="tag-btn">PHP</button>
-                    <button class="tag-btn">C#</button>
-                    <button class="tag-btn">Spring</button>
-                    <button class="tag-btn">Hibernate</button>
-                    <button class="tag-btn">BA</button>
-                    <button class="tag-btn">PM</button>
-                    <button class="tag-btn">C</button>
-                    <button class="tag-btn">C++</button>
-                    <button class="tag-btn">Java</button>
-                    <button class="tag-btn">PHP</button>
-                    <button class="tag-btn">C#</button>
-                    <button class="tag-btn">Spring</button>
-                    <button class="tag-btn">Hibernate</button>
-                    <button class="tag-btn">BA</button>
-                    <button class="tag-btn">PM</button>
-                    <button class="tag-btn">C</button>
-                    <button class="tag-btn">C++</button>
-                    <button class="tag-btn">Java</button>
-                    <button class="tag-btn">PHP</button>
-                    <button class="tag-btn">C#</button>
-                    <button class="tag-btn">Spring</button>
-                    <button class="tag-btn">Hibernate</button>
-                    <button class="tag-btn">BA</button>
-                    <button class="tag-btn">PM</button>
+                    <?php
+                        foreach ((array)$tags as $tag) :
+                    ?>
+                    <p value = "<?php echo $tag['id'] ?>" class="tag-btn"><?php echo $tag['name'] ?></p>
+                    <?php endforeach ?>
                 </div>
             </div>
             <div class="post-content">
@@ -95,8 +67,11 @@
         </form>
     </div>
     <script>
-        CKEDITOR.replace( 'editor' )
+        CKEDITOR.replace( 'editor')
             .config.toolbarCanCollapse = true;
         handleSelectCategory();
+    </script>
+    <script>
+        
     </script>
 </section>
