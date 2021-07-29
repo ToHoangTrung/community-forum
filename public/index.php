@@ -55,6 +55,8 @@ $app->router->get('/user/setting', [UserController::class, 'setting']);
 $app->router->post('/user/setting', [UserController::class, 'setting']);
 //Return user's profile page
 $app->router->get('/user/profile', [UserController::class, 'profile']);
+//Return user's profile page to save user-img
+$app->router->post('/user/profile', [UserController::class, 'profile']);
 
 //Return members page. display member list here
 $app->router->get('/members', [MemberController::class, 'members']);
