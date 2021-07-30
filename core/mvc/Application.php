@@ -57,7 +57,10 @@ class Application
 
     public static function isAdmin(): bool
     {
-        return !self::$app->user->is_admin;
+        if(!self::$app->user || !self::$app->user->is_admin) {
+            return false;
+        }
+        return true;
     }
 
     public function login(User $user): bool

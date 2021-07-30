@@ -18,6 +18,12 @@
         function changeLayoutIfUserPage(){
             let location = window.location.pathname;
 
+            if (location.includes('admin/')) {
+                $('.nav').css('display', 'none');
+                $('.container .page-path').css('display', 'none');
+                $('.footer').css('display', 'none');
+                $('.container').css('margin', 'auto');
+            }
             if(location.includes('user') || location.includes('members/')){
                 $('.nav .top-nav').css('display', 'none');
                 $('.nav .bottom-nav').css('display', 'none');

@@ -46,6 +46,37 @@ class AuthController extends BaseController
         ]);
     }
 
+    public function adminLogin(Request $request): string
+    {
+        $loginModel = new LoginRequest();
+
+        if ($request->getMethod() === 'post') {
+
+            $loginModel->loadData($request->getBody());
+
+            $user = $this->userService->getByEmail($loginModel->email);
+
+            if(!$user || !password_verify($loginModel->password, $user->password)){
+                return $this->render('auth/admin-login', [
+                    'css' => 'page-admin-login.css',
+                    'error' => 'Email or password is incorrect',
+                ]);
+            }else{
+                Application::$app->login($user);
+                if (!Application::isAdmin()) {
+                    return $this->render('auth/admin-login', [
+                        'css' => 'page-admin-login.css',
+                        'error' => 'Email or password is incorrect',
+                    ]);
+                }
+                Application::$app->response->redirect('/admin/dashboard/catalogs');
+            }
+        }
+        return $this->render('auth/admin-login', [
+            'css' => 'page-admin-login.css'
+        ]);
+    }
+
     public function register(Request $request): string
     {
         $registerModel = new RegisterRequest();

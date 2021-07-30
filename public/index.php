@@ -71,6 +71,9 @@ $app->router->get('/members/profile', [MemberController::class, 'getMemberById']
 //Return admin dashboard page
 $app->router->get('/admin/dashboard', [UserController::class, 'admin']);
 
+//Return admin login page
+$app->router->get('/admin/login', [AuthController::class, 'adminLogin']);
+$app->router->post('/admin/login', [AuthController::class, 'adminLogin']);
 //Return admin user management page
 $app->router->get('/admin/dashboard/users', [UserController::class, 'adminUsers']);
 //Return admin user detail management page

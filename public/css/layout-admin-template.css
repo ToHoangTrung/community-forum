@@ -148,11 +148,11 @@
   color: #737881;
   font-size: 20px;
 }
-.container .admin-nav .right-side .admin-logout p {
+.container .admin-nav .right-side .admin-logout a {
   margin-right: 10px;
 }
 .container .admin-nav .right-side .admin-logout:hover {
-  filter: brightness(90%);
+  filter: brightness(70%);
 }
 .container .page-path {
   margin-bottom: 16px;

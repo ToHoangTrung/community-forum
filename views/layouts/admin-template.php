@@ -9,13 +9,14 @@
     <title>Closure Ecommerce</title>
     <style>
         <?php
+            use app\core\mvc\Application;
             include_once __DIR__ . '/../../public/css/styles.css';
             include_once __DIR__ . '/../../public/css/layout-admin-template.css';
         ?>
     </style>
 </head>
 <script>
-    function highlightFocusBlock(){
+    function highlightFocusBlock() {
 
         let location = window.location.pathname;
         let focusBlock = null;
@@ -26,6 +27,12 @@
         if(location.includes('reports')) focusBlock = '#reports-block'
 
         $(focusBlock).css('color', '#096dd9').prev().css('color', '#096dd9').parent().css('background', 'white');
+    }
+    function checkAdminLogin() {
+        let isAdmin = "<?php echo Application::isAdmin();?>";
+        if (!isAdmin) {
+            location.pathname = "/admin/login"
+        }
     }
 </script>
 <body>
@@ -69,8 +76,8 @@
     <div class="admin-nav">
         <div class="left-side nav-item">
             <div class="admin-account nav-item">
-                <img src="https://img.taplb.com/md5/0f/0f/0f0f5765ac987ce389826b6a675c3616/-_-/fit-in/1320x0/filters:quality(80):background_color(white):format(jpeg)"/>
-                <p>John Henderson</p>
+                <img src=<?php echo Application::$PUBLIC_PATH."/assets/image/user/".Application::$app->user->image_url ?>/>
+                <p><?php echo Application::$app->user->username;?></p>
             </div>
             <div class="admin-notification nav-item">
                 <div class="notification-item">
@@ -94,7 +101,7 @@
                 <div class="amount">24</div>
             </div>
             <div class="admin-logout nav-item">
-                <p>Logout</p>
+                <a href="/logout">Logout</a>
                 <i class="fas fa-sign-out-alt"></i>
             </div>
         </div>
@@ -116,5 +123,6 @@
 </body>
 <script>
     highlightFocusBlock();
+    checkAdminLogin();
 </script>
 </html>
