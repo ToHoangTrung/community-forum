@@ -29,7 +29,7 @@
                             <img src="<?php echo '/assets/image/user/'.$member['image_url']?>"/>
                         </div>
                         <div class="headline">
-                            <a href="/members/profile"><?php echo $member['name']?></a>
+                            <a href="/members/profile?id=<?php echo $member['id']?>"><?php echo $member['name']?></a>
                         </div>
                         <p><?php echo $member['count_post']?></p>
                         <p><?php echo $member['avg_rating']?></p>
