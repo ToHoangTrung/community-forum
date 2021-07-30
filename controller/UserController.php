@@ -51,6 +51,9 @@ class UserController extends BaseController
             $data['content'] = $filename;
             $this->postService->createPost($data);
         }
+        $user = $this->userService->getUserByID($userID);
+        global $globaluser;
+        $globaluser = $user;
         $catalogs = $this->catalogService->getAll();
         $tags = $this->tagService->getAll();
         return $this->render('user/new-post',[
@@ -76,6 +79,8 @@ class UserController extends BaseController
             $this->userService->updateUser($data);
         }
         $user = $this->userService->getUserByID($userID);
+        global $globaluser;
+        $globaluser = $user;
         return $this->render('user/user-setting',[
             'user' => $user,
             'css' => 'user-setting.css'
@@ -90,7 +95,6 @@ class UserController extends BaseController
            $file = $_FILES['userfile'];
            $allowd = array ('image/jpeg', 'image/jpg', 'image/png');
            if (in_array($file['type'],$allowd)){
-               var_dump($file);
                $dir = '../public/assets/image/user';
                $filename = basename($file['name']);
                move_uploaded_file($file['tmp_name'], "$dir/$filename");
@@ -98,6 +102,8 @@ class UserController extends BaseController
            }
         }
         $user = $this->userService->getUserByID($userID);
+        global $globaluser;
+        $globaluser = $user;
         $user['birthday'] = FunctionalService::formatDisplayDatetime($user['birthday']);
         return $this->render('user/user-profile',[
             'user' => $user,
