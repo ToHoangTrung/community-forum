@@ -44,15 +44,7 @@ class UserService
         $stmt->setFetchMode(\PDO::FETCH_ASSOC);
         return $stmt->fetch();
     }
-    public function getUserByID($userId)
-    {
-        $stmt = Application::$app->db->prepare("select * from user 
-                                                where id = :userid");
-        $stmt->execute(['userid' => $userId]);
-        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
-        $user = $stmt->fetch();
-        return $user;
-    }
+
     //----------------------------------------------------------------------------------------------------
     public function getProfileUserByID($userId)
     {
