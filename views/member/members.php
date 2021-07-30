@@ -34,7 +34,7 @@
                         <p><?php echo $member['count_post']?></p>
                         <p><?php echo $member['avg_rating']?></p>
                         <div class="newest-post">
-                            <a class="name" href="/forum/posts/info"><?php echo $member['new_post']['headline']?></a>
+                            <a class="name" href="/forum/posts/info?id=<?php echo $member['new_post']['id']?> "><?php echo $member['new_post']['headline']?></a>
                             <p class="time"><?php echo $member['new_post']['updated_date']?> </p>
                         </div>
                     </div>

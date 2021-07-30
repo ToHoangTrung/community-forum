@@ -27,7 +27,16 @@ class MemberController extends BaseController
 
     public function getMemberById(Request $request)
     {
+        $memberId= $request->getBody()['id'];
+        //-------
+        $user = $this->userService->getUserByID($memberId);
+        global $globaluser;
+        $globaluser = $user;
+        //----------
+        $member= $this->userService->getProfileUserByID($memberId);
         return $this->render('member/member-profile',[
+            'user'=>$user,
+            'member'=>$member,
             'css' => 'member-profile.css'
         ]);
     }

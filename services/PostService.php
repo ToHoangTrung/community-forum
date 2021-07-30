@@ -73,7 +73,7 @@ class PostService
     public function getNewPostByUser($userId)
     {
         $stmt = Application::$app->db->prepare("SELECT 
-        post.headline, post.content_url, post.updated_date
+        post.id,post.headline, post.content_url, post.updated_date
         FROM post,user
         WHERE user.id = post.user_id and user.id= :id
         ORDER BY post.updated_date LIMIT 1;");

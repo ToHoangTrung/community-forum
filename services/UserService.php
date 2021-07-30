@@ -44,8 +44,25 @@ class UserService
         $stmt->setFetchMode(\PDO::FETCH_ASSOC);
         return $stmt->fetch();
     }
+    public function getUserByID($userId)
+    {
+        $stmt = Application::$app->db->prepare("select * from user 
+                                                where id = :userid");
+        $stmt->execute(['userid' => $userId]);
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+        $user = $stmt->fetch();
+        return $user;
+    }
     //----------------------------------------------------------------------------------------------------
-
+    public function getProfileUserByID($userId)
+    {
+        $stmt = Application::$app->db->prepare("select * from user 
+                                                where id = :userid");
+        $stmt->execute(['userid' => $userId]);
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+        $user = $stmt->fetch();
+        return $user;
+    }
     public function getAllUser()
     {
         $stmt=Application::$app->db->prepare("select user.id, user.name, user.username, user.email, user.image_url, COUNT(post.id) as count_post,AVG(rating.rating) as avg_rating
@@ -63,6 +80,7 @@ class UserService
                 $member['new_post'] = $postService->getNewPostByUser($member['id']);
             }
             else{
+                $member['new_post']['id']=NULL;
                 $member['new_post']['headline']=NULL;
                 $member['new_post']['content_url']=NULL;
                 $member['new_post']['updated_date']=NULL;
