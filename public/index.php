@@ -10,6 +10,7 @@ use app\controller\PostController;
 use app\controller\ReportController;
 use app\controller\UserController;
 use app\core\mvc\Application;
+use app\core\mvc\Router;
 use app\model\entity\User;
 
 
@@ -97,4 +98,11 @@ $app->router->post('/admin/dashboard/catalogs', [CatalogController::class, 'admi
 
 //$app->router->post('/forum/posts/viewPost', [PostController::class, 'viewPost']);
 
+
+//------------------------------------------------------------------------------------------
+// Search Posts by Keywords :
+$app->router->get('/forum/posts/keyword', [PostController::class, 'getPostsByKeyword']);
+
+
+//----------------------------------------------------------------------------------------------
 $app->run();

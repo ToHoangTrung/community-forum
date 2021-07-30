@@ -24,6 +24,7 @@
         });
     }
 </script>
+
 <section class="main-navigation">
     <div class="category-block service-block">
         <a href="/" class="category-link nav-link" id="home-block">TRANG CHỦ</a>
@@ -194,11 +195,11 @@
                 </div>
                 <div class="dropdown-content">
                     <div class="quick-info-search">
-                        <input id= "Search" placeholder="Tìm kiếm..." class="search-input"/>
+                        <input placeholder="Tìm kiếm..." class="search-input" value="" type="text"/>
                     </div>
                 </div>
                 <div class="dropdown-footer">
-                    <a id ="1" >Search</a>
+                    <a href="/forum/posts/keyword" id="search-link" >Search</a>
                     <a href="/">Advanced Search</a>
                 </div>
             </div>
@@ -208,9 +209,8 @@
 <script>
     highlightFocusBlock();
     handleOpenDropdownService();
-    $('#1').click(function(){
+    $('#search-link').click(function(){
         let _href = $(this).attr('href');
-        alert(_href+'?keyword='+$('.search-input').val());
-        //$this.attr('href',_href+'?keyword='+$('.search-input').val());
-    });
+        $(this).attr('href',_href+'?keyword='+$('.search-input').val());
+    })
 </script>
