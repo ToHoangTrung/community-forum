@@ -1,31 +1,42 @@
 <style>
     <?php
-        include_once __DIR__ . "/../../public/css/layout-member-wall-introduce.css";
+    include_once __DIR__ . "/../../public/css/layout-member-wall-introduce.css";
+    use app\core\mvc\Application;
     ?>
 </style>
 <script>
-    function highlightMemberFocusBlock(){
+    function highlightMemberFocusBlock() {
         let location = window.location.pathname;
         let focusBlock = null;
-        if(location.includes('profile')) focusBlock = '#profile-block'
-        else if(location.includes('activity')) focusBlock = '#activity-block'
-        else if(location.includes('posts')) focusBlock = '#posts-block'
-        else if(location.includes('about-me')) focusBlock = '#about-me-block'
-        $(focusBlock).css({'background': '#0050b3', 'color': 'white', 'font-weight': 'bold'});
+        if (location.includes('profile')) focusBlock = '#profile-block'
+        else if (location.includes('activity')) focusBlock = '#activity-block'
+        else if (location.includes('posts')) focusBlock = '#posts-block'
+        else if (location.includes('about-me')) focusBlock = '#about-me-block'
+        $(focusBlock).css({
+            'background': '#0050b3',
+            'color': 'white',
+            'font-weight': 'bold'
+        });
     }
 </script>
 <section class="member-wall-introduce">
     <div class="member-introduce">
         <div class="member-logo">
-            <img src="https://owwya.com/wp-content/uploads/2020/02/Arknights-Defender-Icon.png"/>
+            <?php
+                $imgUrl = $GLOBALS['globaluser']['image_url'];
+                if ($imgUrl != null) : ?>
+                    <img class="img-responsive" alt="" src=<?php echo Application::$PUBLIC_PATH . "/assets/image/user/" . $GLOBALS['globaluser']['image_url'] ?> />
+                <?php else : ?>
+                    <p class="name-image"><?php echo strtoupper($GLOBALS['globaluser']['username'][0]) ?></p>
+            <?php endif; ?>
         </div>
         <div class="basic-info">
-            <a href="/" class="member-name">Texas</a>
+            <a href="/" class="member-name"><?php echo $GLOBALS['globaluser']['username'] ?></a>
             <a href="/" class="member-rank">Senior Member</a>
             <p class="other-info">Joined: <span>May 8, 2013</span></p>
             <p class="other-info">Last seen: <span>18 minutes ago</span></p>
         </div>
-        <hr style="border-top:1px solid #CCCCCC"/>
+        <hr style="border-top:1px solid #CCCCCC" />
         <div class="member-post-info">
             <div class="info-item">
                 <p class="label">Bài viết</p>
@@ -40,7 +51,7 @@
                 <p class="text">9000</p>
             </div>
         </div>
-        <hr style="border-top:1px solid #CCCCCC; margin: 0 10px 0 20%;"/>
+        <hr style="border-top:1px solid #CCCCCC; margin: 0 10px 0 20%;" />
         <div class="member-contact">
             <a class="contact-item" href="#">Quan tâm</a>
             <a class="contact-item" href="#">Chặn</a>

@@ -26,6 +26,18 @@
   display: block;
   margin: auto;
 }
+.member-wall-introduce .member-introduce .member-logo .name-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: white;
+  font-weight: bold;
+  font-size: 150px;
+  background: #40a9ff;
+  border-radius: 5%;
+  overflow: hidden;
+}
 .member-wall-introduce .member-introduce .basic-info {
   display: flex;
   flex-direction: column;
