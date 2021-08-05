@@ -58,8 +58,20 @@
   width: 250px;
   padding: 10px;
   border: 1px solid #ccc;
+  font-size: 16px;
+  background: #e6f7ff;
   display: flex;
   justify-content: space-between;
+}
+.new-post .content form .catalog-select .catalog-list .first-item option {
+  cursor: pointer;
+  background: #e6f7ff;
+  color: #394ba0;
+  font-size: 16px;
+  z-index: 20;
+  width: 250px;
+  padding: 10px;
+  border: 1px solid #ccc;
 }
 .new-post .content form .catalog-select .catalog-list .first-item i {
   cursor: pointer;

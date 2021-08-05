@@ -45,4 +45,16 @@ class CommentService
         }
         return $comments;
     }
+    public function getTotalCommentByUserId($userId)
+    {
+        $total = null;
+        $stmt = Application::$app->db->prepare("select count(*) as total from comment where user_id = :id");
+        if ($stmt->execute(['id' => $userId])){
+            $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+            $total = $stmt->fetch();
+            return $total['total'];
+        }
+        else
+            return 0;
+    }
 }

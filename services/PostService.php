@@ -143,5 +143,17 @@ class PostService
         return $stmt->fetch();
     }
 
+    public function getTotalPostByUserId($userId)
+    {
+        $total = null;
+        $stmt = Application::$app->db->prepare("select count(*) as total from post where user_id = :id");
+        if ($stmt->execute(['id' => $userId])){
+            $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+            $total = $stmt->fetch();
+            return $total['total'];
+        }
+        else
+            return 0;
+    }
     //--------------------------------------------------------------------------------------------
 }

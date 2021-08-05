@@ -48,7 +48,7 @@
                                     </li>
                                     <li>
                                         <span> Birthday</span>
-                                        <input type="date" name="birthday" value=<?php echo $user['birthday'] ?>> </input>
+                                        <input type="date" name="birthday" value=<?php echo $user['birthday_nofomart'] ?>> </input>
                                     </li>
                                     <li>
                                         <span> Email</span>

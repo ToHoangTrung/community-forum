@@ -33,22 +33,20 @@
         <div class="basic-info">
             <a href="/" class="member-name"><?php echo $GLOBALS['globaluser']['username'] ?></a>
             <a href="/" class="member-rank">Senior Member</a>
-            <p class="other-info">Joined: <span>May 8, 2013</span></p>
-            <p class="other-info">Last seen: <span>18 minutes ago</span></p>
         </div>
         <hr style="border-top:1px solid #CCCCCC" />
         <div class="member-post-info">
             <div class="info-item">
                 <p class="label">Bài viết</p>
-                <p class="text">90</p>
+                <p class="text"><?php echo $GLOBALS['globaluser']['totalpost'] ?></p>
             </div>
             <div class="info-item">
                 <p class="label">Tương tác</p>
-                <p class="text">4555</p>
+                <p class="text"><?php echo $GLOBALS['globaluser']['totalcomment'] ?></p>
             </div>
             <div class="info-item">
                 <p class="label">Điểm</p>
-                <p class="text">9000</p>
+                <p class="text">0</p>
             </div>
         </div>
         <hr style="border-top:1px solid #CCCCCC; margin: 0 10px 0 20%;" />

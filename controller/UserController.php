@@ -104,7 +104,6 @@ class UserController extends BaseController
         $user = $this->userService->getUserByID($userID);
         global $globaluser;
         $globaluser = $user;
-        $user['birthday'] = FunctionalService::formatDisplayDatetime($user['birthday']);
         return $this->render('user/user-profile',[
             'user' => $user,
             'css' => 'user-profile.css'
