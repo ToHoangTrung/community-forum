@@ -98,12 +98,19 @@ class UserService
         $users = $stmt->fetchAll();
 
         $postService = new PostService();
+        $commentService = new CommentService();
         $permissionService = new PermissionService();
 
         foreach ($users as &$user){
-            $user['birthday'] = FunctionalService::formatDisplayDatetime($user['birthday']);
+            $user['birthday_nofomart'] =null;
+            if ($user['birthday']!=null){
+                $user['birthday_nofomart']= $user['birthday'];
+                $user['birthday'] = FunctionalService::formatDisplayDatetime($user['birthday']);
+            }
             $user['posts'] = $postService->getByUserId($user['id']);
             $user['permissions'] = $permissionService->getByUserId($user['id']);
+            $user['totalpost'] =$postService->getTotalPostByUserId($userId);
+            $user['totalcomment'] =$commentService->getTotalCommentByUserId($userId);
         }
         return $users[0];
     }

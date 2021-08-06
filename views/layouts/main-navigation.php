@@ -29,7 +29,7 @@
     <div class="category-block service-block">
         <a href="/" class="category-link nav-link" id="home-block">TRANG CHỦ</a>
         <a href="/forum/posts" class="category-link nav-link" id="forum-block">DIỄN ĐÀN</a>
-        <a href="/" class="category-link nav-link" id="">LAN MAN</a>
+        <a href="/user/posts/new" class="category-link nav-link" id="">ĐĂNG BÀI</a>
         <a href="/members" class="category-link nav-link" id="members-block">THÀNH VIÊN</a>
     </div>
     <div class="user-block service-block">
@@ -73,7 +73,7 @@
                                             <?php endif; ?>
                                         </div>
                                         <div class="basic-info">
-                                            <a href="/" class="user-name"><?php echo Application::$app->user->username?></a>
+                                            <a href="/user/profile" class="user-name"><?php echo Application::$app->user->username?></a>
                                             <p>Thành viên mới</p>
                                             <p class="other-info">Bài viết<span>0</span></p>
                                             <p class="other-info">Tương tác<span>0</span></p>
