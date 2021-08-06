@@ -115,7 +115,7 @@
                         <div class="triangle">
                             <div class="arrow-left"></div>
                         </div>
-                        <img class="user-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPa44TpuO9d9cdIvsvkK4DcJEVcR1ntqWYWYp2dVM7dKfr0Ut7Y9EDuBRgcAoZNj5HkgU&usqp=CAU"/>
+                        <img class="user-image"  src=<?php echo Application::$PUBLIC_PATH."/assets/image/user/".Application::$app->user->image_url ?>/>
                         <a href="/" class="user-name"><?php echo Application::$app->user->name?></a>
                         <p class="user-rank">Thành viên thân thiết</p>
                     </div>
