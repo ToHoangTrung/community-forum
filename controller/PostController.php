@@ -76,7 +76,7 @@ class PostController extends BaseController
     {
         if ($request->getMethod() === 'post'){
             $userId = Application::$app->user->id;
-            $postId = substr($_SERVER['REQUEST_URI'], -1);
+            $postId = $request->getBody()['postId'];
             $data = array(
                 'content' => $request->getBody()['editor'],
             );
@@ -94,7 +94,7 @@ class PostController extends BaseController
             'css' => 'page-forum.css'
         ]);
     }*/
-    
+
     public function adminPosts() {
         $posts = $this->postService->getAll();
         $this->setLayout('admin-template');

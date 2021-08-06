@@ -121,6 +121,7 @@
                     </div>
                     <form id="C4" action="" method="post" class="topic-content-block">
                         <div class="tutorial">Nhập câu trả lời của bạn ở đây</div>
+                        <input name="postId" value="<?php echo $post['id'] ?>" style="display: none"/>
                         <textarea name="editor" placeholder="OK"></textarea>
                         <button class="comment-btn" type="submit"><i class="fas fa-reply"></i>Trả lời</button>
                     </form>
