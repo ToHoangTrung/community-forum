@@ -41,7 +41,8 @@ $app->router->post( '/register', [AuthController::class, 'register']);
 $app->router->get( '/logout', [AuthController::class, 'logout']);
 
 //Return Forum page, get recent upload post of member
-$app->router->get('/forum/posts', [PostController::class, 'forumPosts']);
+//$app->router->get('/forum/posts', [PostController::class, 'forumPosts']);
+$app->router->get('/forum/posts', [CatalogController::class, 'forumCatalogs']);
 //Return post list of one specific catalog
 $app->router->get('/forum/posts/catalog', [PostController::class, 'getPostsByCatalog']);
 //Return post list of one specific keyword

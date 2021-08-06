@@ -10,29 +10,35 @@
             <div class="main-item">
                 <div class="introduce">
                     <p>Đại sảnh</p>
-                    <p>Topics</p>
+                    <p></p>
                     <p>Posts</p>
                     <p>Last post</p>
                 </div>
                 <div class="list">
+                <?php foreach ((array)$catalogs as $catalog) :?>
                     <div class="item">
                         <i class="fas fa-comments item-logo"></i>
                         <div class="headline">
-                            <a href="/forum/posts/catalog/">Young Party</a>
+                            <a href="/forum/posts/catalog?id=<?php echo $catalog['id']?>"><?php echo $catalog['name']?></a>
                         </div>
-                        <p>4,8K</p>
-                        <p>70,2K</p>
+                        <p></p>
+                        <p><?php echo $catalog['count_post']?></p>
                         <div class="newest-post">
+                        <?php if($catalog['new_post']!=NULL){?>
                             <div class="avatar">
-                                <img src="https://danbooru.donmai.us/data/original/f5/07/f50790fdf8324e9a5dbe555c4d52b070.png"/>
+                                <img src="<?php echo '/assets/image/user/'.$catalog['new_post_user']['image_url'] ?>"/>                           
                             </div>
                             <div class="info">
-                                <a class="name" href="/posts/info?id=1">GIỚI THIỆU CUỘC THI DU LỊCH & CU</a>
-                                <p class="time">Today at 5:42 PM </p>
-                                <p class="author">by <a href="/">PixelGoose</a></p>
+                                <a class="name" href="/forum/posts/info?id=<?php echo $catalog['new_post']['id']?>"><?php echo $catalog['new_post']['headline']?></a>
+                                <p class="time"><?php echo $catalog['new_post']['updated_date']?> </p>
+                                <p class="author">by <a href="/members/profile?id=<?php echo $catalog['new_post_user']['id']?>"><?php echo $catalog['new_post_user']['name']?></a></p>
                             </div>
+                        <?php }else{?>
+                            <p>No Post</p>
+                        <?php }?>
                         </div>
                     </div>
+                <?php endforeach;?>
                 </div>
             </div>
         </div>

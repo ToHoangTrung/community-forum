@@ -89,12 +89,12 @@ class PostController extends BaseController
         }
     }
 
-    public function forumPosts(){
+    /* public function forumPosts(){
         return $this->render('forum/forum',[
             'css' => 'page-forum.css'
         ]);
-    }
-
+    }*/
+    
     public function adminPosts() {
         $posts = $this->postService->getAll();
         $this->setLayout('admin-template');

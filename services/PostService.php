@@ -143,6 +143,18 @@ class PostService
         return $stmt->fetch();
     }
 
+    public function getNewPostByCatalog($catalogId)
+    {
+        $stmt = Application::$app->db->prepare("SELECT 
+        post.id,post.headline, post.content_url, post.updated_date
+        FROM post,catalog
+        WHERE catalog.id = post.catalog_id and catalog.id= :id
+        ORDER BY post.updated_date LIMIT 1;");
+        $stmt->execute(['id' => $catalogId]);
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+        return $stmt->fetch();
+    }
+
     public function getPostsByMember($memberId)
     {
         $stmt = Application::$app->db->prepare("select * from post where post.user_id = :id");

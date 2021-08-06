@@ -61,9 +61,9 @@
     </div>
     <div class="member-nav">
         <a href="/members/profile?id=<?php echo $GLOBALS['globaluser']['id']?>" class="nav-link" id="profile-block">Tường nhà</a>
-        <a href="/member/activity" class="nav-link" id="activity-block">Hoạt động</a>
+        <a href="/member/activity" class="nav-link" id="activity-block"></a>
         <a href="/members/posts?id=<?php echo $GLOBALS['globaluser']['id']?>" class="nav-link" id="posts-block">Bài viết</a>
-        <a href="/member/about-me" class="nav-link" id="about-me-block">Giới thiệu</a>
+        <a href="/member/about-me" class="nav-link" id="about-me-block"></a>
     </div>
 </section>
 <script>
