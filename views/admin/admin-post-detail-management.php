@@ -10,10 +10,6 @@
     </div>
     <div class="content">
         <div class="detail-nav">
-            <div class="left">
-                <a href="/admin/dashboard">Display Comment</a>
-                <a href="/admin/dashboard/reports/post">Display Report</a>
-            </div>
             <div class="right">
                 <div class="custom-select">
                     <select class="status-select">
