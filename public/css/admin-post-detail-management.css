@@ -1,0 +1,154 @@
+.admin-post-detail .top-headline {
+  margin-bottom: 16px;
+}
+.admin-post-detail .top-headline p {
+  font-size: 30px;
+  color: #096dd9;
+}
+.admin-post-detail .content {
+  margin-bottom: 50px;
+}
+.admin-post-detail .content .detail-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.admin-post-detail .content .detail-nav .left {
+  display: flex;
+  grid-column-gap: 16px;
+  align-items: center;
+}
+.admin-post-detail .content .detail-nav .right {
+  display: flex;
+  grid-column-gap: 16px;
+  align-items: center;
+}
+.admin-post-detail .content .detail-nav .right .custom-select {
+  position: relative;
+  display: flex;
+  width: 200px;
+  height: 40px;
+  line-height: 3;
+  background: white;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.admin-post-detail .content .detail-nav .right .custom-select select {
+  font-size: 16px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-color: #40a9ff;
+  background-image: none;
+  flex: 1;
+  padding: 0 0.5em;
+  color: #fff;
+  cursor: pointer;
+}
+.admin-post-detail .content .detail-nav .right .custom-select::after {
+  display: flex;
+  align-items: center;
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #096dd9;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: 0.25s all ease;
+  -o-transition: 0.25s all ease;
+  transition: 0.25s all ease;
+  color: white;
+}
+.admin-post-detail .content .detail-nav .right .custom-select:hover::after {
+  color: #d8d8d8;
+}
+.admin-post-detail .content .detail-nav button, .admin-post-detail .content .detail-nav a {
+  padding: 10px 15px;
+  background: #1890ff;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.admin-post-detail .content .detail-nav button:hover, .admin-post-detail .content .detail-nav a:hover {
+  background: #096dd9;
+}
+.admin-post-detail .content .detail-content .detail-info {
+  width: 100%;
+  border: 1px solid #d8d8d8;
+}
+.admin-post-detail .content .detail-content .detail-info .content {
+  flex-direction: column;
+  display: flex;
+}
+.admin-post-detail .content .detail-content .detail-info .content .show-hide-btn {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #d8d8d8;
+  display: flex;
+  justify-content: space-between;
+}
+.admin-post-detail .content .detail-content .detail-info .content .show-hide-btn button {
+  width: fit-content;
+  height: 50px;
+  padding: 16px;
+  text-align: center;
+  font-size: 16px;
+  color: white;
+  background-color: #1890ff;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.admin-post-detail .content .detail-content .detail-info .content .show-hide-btn button:hover {
+  background-color: #096dd9;
+}
+.admin-post-detail .content .detail-content .detail-info .content .info {
+  padding: 12px;
+}
+.admin-post-detail .content .detail-content .detail-info .detail-info-item {
+  display: flex;
+  justify-content: space-between;
+  transition: 0.3s;
+  align-items: stretch;
+}
+.admin-post-detail .content .detail-content .detail-info .detail-info-item .title, .admin-post-detail .content .detail-content .detail-info .detail-info-item .info {
+  display: flex;
+  padding: 12px;
+  border: 1px solid #d8d8d8;
+  font-size: 16px;
+  align-items: center;
+}
+.admin-post-detail .content .detail-content .detail-info .detail-info-item .title {
+  width: 20%;
+}
+.admin-post-detail .content .detail-content .detail-info .detail-info-item .info {
+  width: 80%;
+}
+.admin-post-detail .content .detail-content .detail-info .detail-info-item .post-tags-list {
+  grid-column-gap: 8px;
+}
+.admin-post-detail .content .detail-content .detail-info .detail-info-item .post-tags-list a {
+  background: #1890ff;
+  color: white;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.admin-post-detail .content .detail-content .detail-info .detail-info-item .post-tags-list a:hover {
+  background: #096dd9;
+}
+.admin-post-detail .content .detail-content .detail-info .detail-info-item:nth-child(even) {
+  background-color: #e6f7ff;
+}
+.admin-post-detail .content .detail-content .detail-info .detail-info-item:hover {
+  background: #bae7ff;
+}

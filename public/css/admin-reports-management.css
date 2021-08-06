@@ -1,0 +1,130 @@
+.admin-reports .top-headline {
+  margin-bottom: 16px;
+}
+.admin-reports .top-headline p {
+  font-size: 30px;
+  color: #096dd9;
+}
+.admin-reports .content .main-table .table-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.admin-reports .content .main-table .table-nav .table-search {
+  display: flex;
+}
+.admin-reports .content .main-table .table-nav .table-search .search-input {
+  padding: 10px;
+  width: 400px;
+  background: white;
+  border: 1px solid #ccc;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.admin-reports .content .main-table .table-nav .table-search .search-input:focus {
+  border: 1px solid #1890ff;
+}
+.admin-reports .content .main-table .table-nav .table-search .search-btn {
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 16px;
+  background: #1890ff;
+  color: white;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.admin-reports .content .main-table .table-nav .table-search .search-btn:hover {
+  background: #096dd9;
+}
+.admin-reports .content .main-table .table-nav .table-new .new-btn {
+  padding: 10px 15px;
+  background: #1890ff;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.admin-reports .content .main-table .table-nav .table-new .new-btn:hover {
+  background: #096dd9;
+}
+.admin-reports .content .main-table table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.admin-reports .content .main-table table td, .admin-reports .content .main-table table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.admin-reports .content .main-table table tr {
+  transition: 0.3s;
+}
+.admin-reports .content .main-table table tr:nth-child(even) {
+  background-color: #e6f7ff;
+}
+.admin-reports .content .main-table table tr:hover {
+  background: #bae7ff;
+}
+.admin-reports .content .main-table table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #40a9ff;
+  color: white;
+}
+.admin-reports .content .main-table table .action-list {
+  display: flex;
+  grid-column-gap: 10px;
+}
+.admin-reports .content .main-table table .action-list a {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  color: white;
+}
+.admin-reports .content .main-table table .action-list a p {
+  padding: 0 15px;
+}
+.admin-reports .content .main-table table .action-list a i {
+  color: white;
+  width: 30px;
+  padding: 10px 0;
+  text-align: center;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.admin-reports .content .main-table table .action-list a:first-child {
+  background: #00a65a;
+}
+.admin-reports .content .main-table table .action-list a:first-child i {
+  background: #039050;
+}
+.admin-reports .content .main-table table .action-list a:first-child:hover {
+  background: #039050;
+}
+.admin-reports .content .main-table table .action-list a:last-child {
+  background: #21a9e1;
+}
+.admin-reports .content .main-table table .action-list a:last-child i {
+  background: #1a8fbf;
+}
+.admin-reports .content .main-table table .action-list a:last-child:hover {
+  background: #1a8fbf;
+}
+.admin-reports .content .main-table .table-footer {
+  margin-top: 25px;
+}
+.admin-reports .content .main-table .table-footer .table-pagination {
+  display: flex;
+  justify-content: flex-end;
+}
+.admin-reports .content .main-table .table-footer .table-pagination a {
+  padding: 7px 10px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.admin-reports .content .main-table .table-footer .table-pagination a:hover {
+  background: black;
+  color: white;
+}
