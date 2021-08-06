@@ -46,7 +46,7 @@ class UserController extends BaseController
             );
             $content = html_entity_decode($data['content']);
             $dir = '../public/assets/content/post';
-            $filename= $data['headline'].'.txt';
+            $filename= 'user'.$userID.'-'.date('m-d-Y-h-i-s-a', time()).'.txt';
             file_put_contents("$dir/$filename",$content);
             $data['content'] = $filename;
             $this->postService->createPost($data);
