@@ -72,6 +72,6 @@
         handleSelectCategory();
     </script>
     <script>
-        
+
     </script>
 </section>
