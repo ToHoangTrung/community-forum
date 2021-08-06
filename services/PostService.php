@@ -110,7 +110,7 @@ class PostService
 
 
 
-    //-----------------------------------------------------------------------------------------
+    //----------------------------------TRINHKHANH-------------------------------------------------------
     public function getPostsByKeyword($keyword)
     {
         $keyword_to_search='%'.$keyword.'%';
@@ -141,6 +141,25 @@ class PostService
         $stmt->execute(['id' => $userId]);
         $stmt->setFetchMode(\PDO::FETCH_ASSOC);
         return $stmt->fetch();
+    }
+
+    public function getPostsByMember($memberId)
+    {
+        $stmt = Application::$app->db->prepare("select * from post where post.user_id = :id");
+        $stmt->execute(['id' => $memberId]);
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+        $posts = $stmt->fetchAll();
+        
+        $tagService = new TagService();
+        $userService = new UserService();
+
+        foreach ($posts as &$post){
+            $post['created_date'] = FunctionalService::formatDisplayDatetime($post['created_date']);
+            $post['updated_date'] = FunctionalService::formatDisplayDatetime($post['updated_date']);
+            $post['user'] = $userService->getUserByPost($post['id']);
+            $post['tags'] = $tagService->getTagsByPost($post['id']);
+        }
+        return $posts;
     }
 
     //--------------------------------------------------------------------------------------------

@@ -1,0 +1,87 @@
+.admin-report-detail .top-headline {
+  margin-bottom: 16px;
+}
+.admin-report-detail .top-headline p {
+  font-size: 30px;
+  color: #096dd9;
+}
+.admin-report-detail .content .detail-nav {
+  display: flex;
+  grid-column-gap: 16px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.admin-report-detail .content .detail-nav button {
+  padding: 10px 15px;
+  background: #1890ff;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.admin-report-detail .content .detail-nav button:hover {
+  background: #096dd9;
+}
+.admin-report-detail .content .detail-content .detail-info {
+  width: 100%;
+  border: 1px solid #d8d8d8;
+}
+.admin-report-detail .content .detail-content .detail-info .content {
+  flex-direction: column;
+  display: flex;
+}
+.admin-report-detail .content .detail-content .detail-info .content .title {
+  width: 100%;
+  padding: 16px;
+  text-align: center;
+  font-size: 20px;
+  color: #1890ff;
+  font-weight: bold;
+  border: 1px solid #d8d8d8;
+}
+.admin-report-detail .content .detail-content .detail-info .content .info {
+  padding: 12px;
+}
+.admin-report-detail .content .detail-content .detail-info .detail-info-item {
+  display: flex;
+  justify-content: space-between;
+  transition: 0.3s;
+  align-items: stretch;
+}
+.admin-report-detail .content .detail-content .detail-info .detail-info-item .title, .admin-report-detail .content .detail-content .detail-info .detail-info-item .info {
+  display: flex;
+  padding: 12px;
+  border: 1px solid #d8d8d8;
+  font-size: 16px;
+  align-items: center;
+}
+.admin-report-detail .content .detail-content .detail-info .detail-info-item .title {
+  width: 20%;
+}
+.admin-report-detail .content .detail-content .detail-info .detail-info-item .info {
+  width: 80%;
+}
+.admin-report-detail .content .detail-content .detail-info .detail-info-item a:hover {
+  text-decoration: underline;
+  color: #096dd9;
+}
+.admin-report-detail .content .detail-content .detail-info .detail-info-item .post-tags-list {
+  grid-column-gap: 8px;
+}
+.admin-report-detail .content .detail-content .detail-info .detail-info-item .post-tags-list a {
+  background: #1890ff;
+  color: white;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.admin-report-detail .content .detail-content .detail-info .detail-info-item .post-tags-list a:hover {
+  background: #096dd9;
+}
+.admin-report-detail .content .detail-content .detail-info .detail-info-item:nth-child(even) {
+  background-color: #e6f7ff;
+}
+.admin-report-detail .content .detail-content .detail-info .detail-info-item:hover {
+  background: #bae7ff;
+}

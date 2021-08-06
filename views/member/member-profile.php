@@ -4,7 +4,7 @@
     include_once Application::$ROOT_DIR . "/public/css/$css";
     ?>
 </style>
-<section class="member-profile">
+<section class="user-profile">
     <div class="row">
         <div class="grid-view1">
             <div class="side-bar">

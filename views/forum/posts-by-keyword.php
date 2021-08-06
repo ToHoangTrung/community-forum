@@ -5,7 +5,7 @@
         include_once $rootPath."/public/css/$css";
     ?>
 </style>
-<section class="posts-by-keyword">
+<section class="posts">
     <div class="top-headline">
          <a href="<?php echo '/forum/posts/keyword?keyword='.$keyword ?>"><?php echo 'Posts with Keyword: '.$keyword ?></a> 
     </div>
