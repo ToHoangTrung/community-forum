@@ -32,7 +32,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'e6593326742af150a63834049d2cbb895808a73f',
+    'reference' => 'aa8a9184ffce098b0c2d3bbad398214aaf810a11',
     'name' => 'udpt/community-forum-web',
   ),
   'versions' => 
@@ -107,7 +107,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'e6593326742af150a63834049d2cbb895808a73f',
+      'reference' => 'aa8a9184ffce098b0c2d3bbad398214aaf810a11',
     ),
     'vlucas/phpdotenv' => 
     array (

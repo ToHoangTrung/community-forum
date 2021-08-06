@@ -41,7 +41,8 @@ $app->router->post( '/register', [AuthController::class, 'register']);
 $app->router->get( '/logout', [AuthController::class, 'logout']);
 
 //Return Forum page, get recent upload post of member
-$app->router->get('/forum/posts', [PostController::class, 'forumPosts']);
+//$app->router->get('/forum/posts', [PostController::class, 'forumPosts']);
+$app->router->get('/forum/posts', [CatalogController::class, 'forumCatalogs']);
 //Return post list of one specific catalog
 $app->router->get('/forum/posts/catalog', [PostController::class, 'getPostsByCatalog']);
 //Return post list of one specific keyword
@@ -68,6 +69,9 @@ $app->router->post('/user/profile', [UserController::class, 'profile']);
 $app->router->get('/members', [MemberController::class, 'members']);
 //Return 1 member profile base on its id, show the profile and members navigation to go to other member page
 $app->router->get('/members/profile', [MemberController::class, 'getMemberById']);
+//Return posts by 1 member base on member's id:
+$app->router->get('/members/posts', [MemberController::class, 'getPostsByMember']);
+
 
 //Return admin dashboard page
 $app->router->get('/admin/dashboard', [UserController::class, 'admin']);

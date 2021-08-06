@@ -35,4 +35,14 @@ class CatalogController extends BaseController
         $this->catalogService->createNewCatalog($name, $description);
         $response->redirect("/admin/dashboard/catalogs");
     }
+//------------------------------------TRINHKHANH---------------------------------------------
+
+    public function forumCatalogs(){
+        $catalogs = $this->catalogService->getAllCatalog();
+        return $this->render('forum/forum',[
+            'catalogs'=>$catalogs,
+            'css' => 'page-forum.css'
+        ]);
+    }
+//----------------------------------------------------------------------------------------------
 }

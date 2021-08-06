@@ -110,7 +110,7 @@ class PostService
 
 
 
-    //-----------------------------------------------------------------------------------------
+    //----------------------------------TRINHKHANH-------------------------------------------------------
     public function getPostsByKeyword($keyword)
     {
         $keyword_to_search='%'.$keyword.'%';
@@ -155,5 +155,36 @@ class PostService
         else
             return 0;
     }
+    public function getNewPostByCatalog($catalogId)
+    {
+        $stmt = Application::$app->db->prepare("SELECT 
+        post.id,post.headline, post.content_url, post.updated_date
+        FROM post,catalog
+        WHERE catalog.id = post.catalog_id and catalog.id= :id
+        ORDER BY post.updated_date LIMIT 1;");
+        $stmt->execute(['id' => $catalogId]);
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+        return $stmt->fetch();
+    }
+
+    public function getPostsByMember($memberId)
+    {
+        $stmt = Application::$app->db->prepare("select * from post where post.user_id = :id");
+        $stmt->execute(['id' => $memberId]);
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+        $posts = $stmt->fetchAll();
+
+        $tagService = new TagService();
+        $userService = new UserService();
+
+        foreach ($posts as &$post){
+            $post['created_date'] = FunctionalService::formatDisplayDatetime($post['created_date']);
+            $post['updated_date'] = FunctionalService::formatDisplayDatetime($post['updated_date']);
+            $post['user'] = $userService->getUserByPost($post['id']);
+            $post['tags'] = $tagService->getTagsByPost($post['id']);
+        }
+        return $posts;
+    }
+
     //--------------------------------------------------------------------------------------------
 }

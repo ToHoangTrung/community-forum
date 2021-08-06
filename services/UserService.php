@@ -45,7 +45,7 @@ class UserService
         return $stmt->fetch();
     }
 
-    //----------------------------------------------------------------------------------------------------
+    //--------------------------------------TRINHKHANH--------------------------------------------------------------
     public function getProfileUserByID($userId)
     {
         $stmt = Application::$app->db->prepare("select * from user 
@@ -81,7 +81,7 @@ class UserService
         return $members;
     }
 
-
+//--------------------------------------------------------------------------------------------------------------------------
     public function getAll()
     {
         $stmt = Application::$app->db->prepare("select * from user where id >= :id");
